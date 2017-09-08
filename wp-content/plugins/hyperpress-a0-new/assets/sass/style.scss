@@ -1,0 +1,1920 @@
+@import "php-variables";
+@import "reset";
+@import "hacks";
+@import "variables";
+@import "mixins";
+@import "typography";
+@import "login";
+
+// General
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: $bg-color;
+}
+
+.hide-if-js {
+	display: none;
+}
+
+// Pages Specific Padding
+.index-php #wpbody-content > .wrap,
+.post-php #wpbody-content > .wrap,
+.themes-php #wpbody-content > .wrap,
+.profile-php #wpbody-content > .wrap,
+.options-general-php #wpbody-content > .wrap,
+.options-writing-php #wpbody-content > .wrap,
+.options-reading-php #wpbody-content > .wrap,
+.options-discussion-php #wpbody-content > .wrap,
+.options-media-php #wpbody-content > .wrap,
+.options-permalink-php #wpbody-content > .wrap,
+.options-menu-editor-php #wpbody-content > .wrap,
+.options-hyperpress-php #wpbody-content > .wrap,
+.plugin-install-php #wpbody-content > .wrap,
+.post-new-php #wpbody-content > .wrap,
+.user-new-php #wpbody-content > .wrap,
+.settings_page_hypersettings #wpbody-content > .wrap {
+	padding: 75px 20px;
+	@include respond($md) {
+		padding: 87px 35px 0 35px;
+	}
+}
+
+.edit-php #wpbody-content > .wrap#acf-field_groups {
+	padding-top: 80px;
+}
+
+.users-php #wpbody-content > .wrap {
+	padding-top: 0px;
+	//margin-top: -7px;
+	@include transition(padding-top $medium ease-in-out);
+	@include respond($md) {
+		padding-top: 78px;
+	}
+}
+
+.plugins-php #wpbody-content > .wrap {
+	padding-top: 0px;
+	margin-top: -10px;
+	@include transition(padding-top $medium ease-in-out);
+	@include respond($md) {
+		padding-top: 90px;
+	}
+}
+
+.edit-php #wpbody-content > .wrap {
+	padding-top: 11px;
+	//margin-top: -7px;
+	@include transition(padding-top $medium ease-in-out);
+	@include respond($md) {
+		padding-top: 60px;
+	}
+}
+
+.hyperpress-filters-open.edit-php #wpbody-content > .wrap {
+	padding-top: 213px;
+	@include respond($md) {
+		padding-top: 208px;
+	}
+}
+
+.hyperpress-filters-open.users-php #wpbody-content > .wrap {
+	padding-top: 200px;
+	@include respond($md) {
+		padding-top: 232px;
+	}
+}
+
+.hyperpress-filters-open.plugins-php #wpbody-content > .wrap {
+	padding-top: 180px;
+	@include respond($md) {
+		padding-top: 232px;
+	}
+}
+
+#wpbody-content {
+	//width: 100%;
+}
+
+// Fixed Page Header
+#wpbody-content > .wrap {
+	padding-top: 60px;
+}
+
+#wpbody-content > .wrap > h2 {
+	height: 60px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid $hr-color;
+	background-color: #f2f2f2;
+	background-color: #fff;
+	padding: 18px 20px 0 55px;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0;
+	z-index: 1000; 
+	width: 100%;
+	@include respond($md) {
+		padding: 16px 35px 0 70px;
+		font-size: 24px;
+		font-weight: 500;
+		letter-spacing: -0.025em;
+		line-height: 1.25em;
+		margin-bottom: 1em;
+		text-transform: none;
+	}
+	@include respond($lg) {
+		left: $sidebar-width;
+		padding-left: 35px;
+		width: auto;
+	}
+}
+
+.add-new-h2 {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	text-indent: -9999px;
+	//overflow: hidden;
+	background-image: url(../../images/plus-blk.png);
+	background-image: url(../../images/plus-blk.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 0px;
+	.post-php & {
+		right: 77px;
+	}
+	top: 0px;
+	width: 57px;
+	height: 59px;
+	@include opacity(.3);
+	@include respond($md) {
+		right: 15px;
+		.post-php & {
+			right: 161px;
+		}
+	}
+	@include respond($lg) {
+		@include opacity(.7);
+		@include border-radius($input-border-radius);
+		background-color: $hr-color;
+		height: 35px;
+		border: $btn-border;
+		border-color: $hr-color;
+		position: static;
+		vertical-align: top;
+		margin-top: -4px;
+		margin-left: 10px;
+	}
+}
+
+.add-new-h2:hover,
+.add-new-h2:focus {
+	@include opacity(1);
+	border-color: #ccc;
+}
+
+// Left Sidebar
+#adminmenuwrap {
+	background-color: #222;
+	width: 80%;
+	position: fixed;
+	top: 0;
+	width: $mobile-sidebar-width;
+	overflow: hidden;
+	left: 0;
+	display: none;
+	@include respond($md) {
+		width: $tablet-sidebar-width;
+	}
+	@include respond($lg) {
+		display: block;
+		width: $sidebar-width;
+	}
+}
+
+#adminmenu,
+#adminmenu ul {
+	list-style: none;
+	padding: 0;
+	font-size: 17px;
+	min-width: 200px;
+	width: 100%;
+	margin-top: 0;
+	@include respond($md) {
+		font-size: 15px;
+	}
+}
+
+#adminmenu > li.wp-first-item {
+	background-color: blue;
+	background-color: $primary-color;
+	background-image: url(../../images/go-to-site.png);
+	background-image: url(../../images/go-to-site.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#adminmenu > li.wp-first-item a {
+	background-color: blue;
+	background-color: $primary-color;
+	background-image: url($logo_url);
+	background-position: center;
+	background-size: auto 65%;
+	background-repeat: no-repeat;
+	height: 59px;
+	text-indent: -9999px;
+	overflow: hidden;
+	border-width: 0;
+	@include opacity(1);
+}
+
+#adminmenu > li.wp-first-item a:hover {
+	@include opacity(0);
+	background-color: blue;
+	background-color: $primary-color;
+}
+
+#adminmenuwrap.unfixed {
+	position: absolute;
+}
+
+#adminmenuback {
+	background-color: #222;
+	width: $mobile-sidebar-width;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+	display: none;
+	@include respond($md) {
+		width: $tablet-sidebar-width;
+	}
+	@include respond($lg) {
+		display: block;
+		width: $sidebar-width;
+		left: 0;
+	}
+}
+
+.wp-menu-image,
+.wp-menu-name {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.wp-menu-image {
+	margin-right: 10px;
+	width: 20px;
+}
+
+.wp-menu-image img {
+	width: 20px;
+	height: auto;
+	vertical-align: top;
+}
+
+#adminmenu li {
+	margin: 0;
+}
+
+#adminmenu > li > a {
+	padding: 11px 10px 9px 15px;
+	font-weight: 700;
+}
+
+#adminmenu li a, 
+#adminmenu li a div,
+#adminmenu li.wp-menu-open.fj-inactive > a,
+#adminmenu li.wp-menu-open.fj-inactive > a div {
+	color: #fff;
+	@include opacity(.8);
+	background-color: transparent;
+}
+
+#adminmenu li .wp-submenu a {
+	display: block;
+	padding: 6px 0;
+	@include respond($md) {
+		padding: 2px 0;
+	}
+}
+
+#adminmenu > li > a,
+#adminmenu li.wp-menu-open.fj-inactive > a,
+#adminmenu li.fj-inactive > a {
+	display: block;
+	border-left: 3px solid transparent;
+}
+
+#adminmenu li a:hover,
+#adminmenu li a:hover div,
+#adminmenu > li.current > a,
+#adminmenu > li.current > a div,
+#adminmenu > li.wp-menu-open > a,
+#adminmenu > li.wp-menu-open > a div {
+	@include opacity(1);
+}
+
+#adminmenu li.fj-active > a div,
+#adminmenu li.fj-active > a {
+	@include opacity(1);
+}
+
+#adminmenu > li > a:hover,
+#adminmenu > li.current > a,
+#adminmenu > li.wp-menu-open > a,
+#adminmenu li.fj-active > a {
+	background-color: #333;
+	border-color: #fff;
+}
+
+#adminmenu li > .wp-submenu {
+	overflow: hidden;
+	background-color: #111;
+	margin: 0;
+	padding: 0;
+	max-height: 0;
+	font-weight: 700;
+	padding: 0 0 0 46px;
+	@include transition((padding $medium ease-in-out, max-height $medium ease-in-out));
+}
+
+#adminmenu li.fj-open-menu > .wp-submenu {
+	padding: 15px 0 15px 46px;
+	max-height: 400px;
+}
+
+#adminmenu li.fj-close-menu > .wp-submenu {
+	padding: 0 0 0 46px !important;
+	max-height: 0 !important;
+}
+
+#adminmenu li.wp-menu-open > .wp-submenu {
+	padding: 15px 0 15px 46px;
+	max-height: 400px;
+}
+
+#adminmenu li.wp-menu-open > a, 
+#adminmenu li.wp-menu-open > a div {
+	@include opacity(1);
+}
+
+.wp-menu-name {
+	width: 130px;
+}
+
+#adminmenu li > a .update-plugins {
+	display: inline-block;
+	margin-top: -1px;
+	margin-left: 7px;
+	min-width: 25px;
+	padding: 1px 5px 0;
+	line-height: 18px;
+	text-align: center;
+	@include border-radius(20px);
+	border: 1px solid #999;
+	background-color: #999;
+	color: #222;
+	font-size: 13px;
+}
+
+a.hyperpress-logout {
+	display: block;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	@include transition((color $medium ease-in-out, background-color $medium ease-in-out));
+	color: transparent;
+	padding: 18px 20px 20px;
+	background-color: #444;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-size: 14px;
+	@include respond($md) {
+		color: $hr-color;
+	}
+}
+
+a.hyperpress-logout:hover,
+a.hyperpress-logout:focus {
+	background-color: #555;
+	color: #fff;
+}
+
+// Mobile Menu
+#wpcontent {
+	//overflow: hidden;
+}
+
+#wpcontent #wpbody {
+	background-color: $bg-color;
+	//position: relative;
+	z-index: 1;
+}
+
+#wpcontent #wpbody {
+	transition: transform .25s ease-in-out;
+  -webkit-transition: -webkit-transform .25s ease-in-out;
+}
+
+.hyperpress-menu-open #wpcontent #wpbody {
+ transform: translate3d( $mobile-sidebar-width, 0, 0 ); /* X, Y, Z */
+ -webkit-transform: translate3d( $mobile-sidebar-width, 0, 0 );
+ @include respond($md) {
+ 	transform: translate3d( $tablet-sidebar-width, 0, 0 ); /* X, Y, Z */
+ 	-webkit-transform: translate3d( $tablet-sidebar-width, 0, 0 );
+ }
+ @include respond($lg) {
+ 	transform: translate3d( 0, 0, 0 ); /* X, Y, Z */
+ 	-webkit-transform: translate3d( 0, 0, 0 );
+ }
+}
+// Light Sidebar
+.light #adminmenuwrap {
+	background-color: #ddd;
+}
+
+.light #adminmenu li a, 
+.light #adminmenu li a div {
+	color: #000;
+}
+
+.light #adminmenu li > .wp-submenu {
+	background-color: $hr-color;
+}
+
+.light .wp-menu-open {
+	background-color: $hr-color;
+}
+
+// Main Content Area
+#wpcontent {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0 auto;
+	@include fadeIn(1s);
+	width: 100%;
+	@include transition((margin-left $medium ease-in-out));
+	@include respond($lg) {
+		padding-left: $sidebar-width;
+		padding-right: 0px;
+		width: 100%;
+	}
+}
+
+// Buttons
+.wp-core-ui .button, .wp-core-ui .button-secondary {
+	color: #555;
+	font-weight: 700;
+	border-color: #ccc;
+	background-color: $hr-color;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	vertical-align: top;
+	font-family: $main-font;
+	@include transition((color $speed ease-in-out, background $speed ease-in-out));
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+	height: 35px;
+	line-height: 35px;
+	padding: 0 12px 2px;
+}
+
+.wp-core-ui .button-secondary:focus,
+.wp-core-ui .button-secondary:hover,
+.wp-core-ui .button.focus,
+.wp-core-ui .button.hover,
+.wp-core-ui .button:focus,
+.wp-core-ui .button:hover {
+	color: #000;
+	border-color: #ccc;
+	background-color: #ccc;
+}
+
+.wp-core-ui .button-primary {
+	background-color: #222;
+	border-color: #111;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: $hr-color;
+	text-decoration: none;
+}
+
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary:focus {
+	border-color: #000;
+	background-color: #000;
+	color: #fff;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.wp-core-ui .button-primary-disabled,
+.wp-core-ui .button-primary.disabled,
+.wp-core-ui .button-primary:disabled,
+.wp-core-ui .button-primary[disabled] {
+	color: #555 !important;
+	background: $hr-color !important;
+	border-color: #ccc !important;
+	-webkit-box-shadow: none!important;
+	box-shadow: none!important;
+	text-shadow: none !important;
+	cursor: default;
+	@include opacity(.75);
+}
+
+// Tables
+table {
+	width: 100%;
+	font-size: 14px;
+}
+
+.row-actions {
+	display: none;
+	@include respond($md) {
+		display: block;
+	}
+} 
+
+span.locked-text {
+	text-transform: uppercase;
+	letter-spacing: .075em;
+	font-size: 10px;
+	font-weight: 700;
+}
+
+.row-actions .inline.hide-if-no-js {
+	display: none;
+}
+
+table.wp-list-table thead tr th > div {
+	position: fixed;
+	top: 60px;
+	padding: 10px 0 8px;
+	border-bottom: 1px solid $hr-color;
+	color: #000;
+	width: 100%;
+	background-color: #f2f2f2;
+	cursor: pointer;
+	z-index: 950;
+	height: 43px;
+	display: none;
+	@include transition((top $medium ease-in-out, opacity $medium ease-in-out));
+	@include respond($md) {
+		display: block;
+	}
+}
+
+table.wp-list-table tfoot {
+	display: none;
+}
+
+table.wp-list-table thead tr th {
+	text-transform: uppercase;
+	letter-spacing: .075em;
+	font-weight: 700;
+	font-size: 12px;
+	border-bottom: 1px solid $hr-color;
+	background-color: transparent;
+}
+
+table.wp-list-table thead tr th,
+table.wp-list-table thead tr th > a {
+	color: transparent;
+}
+
+table.wp-list-table thead tr th > label {
+	@include opacity(0);
+}
+
+table.wp-list-table tbody tr td,
+table.wp-list-table tbody tr th {
+	vertical-align: top;
+	border-bottom: 1px solid $hr-color;
+	padding: 10px 0;
+	vertical-align: middle;
+	@include respond($md) {
+		padding: 15px 0;
+	}
+}
+
+table.wp-list-table .post-title {
+	position: relative;
+}
+
+table.wp-list-table a {
+	color: $text-color;
+	position: absolute;
+	left: -85px;
+	right: 0;
+	height: 70px;
+	padding: 24px 0 0 85px;
+	top: 0;
+	@include respond($md) {
+		position: static;
+		padding: 0;
+		margin-top: 0;
+		height: auto;
+	}
+}
+
+table.wp-list-table a:hover {
+	color: $primary-color;
+}
+
+.column-title strong {
+	font-size: 16px;
+	@include respond($huge) {
+		font-size: 18px;
+	}
+}
+
+table.wp-list-table thead tr th.check-column, 
+table.wp-list-table tfoot tr th.check-column,
+table.wp-list-table tbody tr th.check-column {
+	width: 55px;
+	display: none;
+	@include respond($md) {
+		width: 70px;
+		display: table-cell;
+	}
+}
+
+table.wp-list-table thead tr th.column-comments, 
+table.wp-list-table tfoot tr th.column-comments,
+table.wp-list-table tbody tr td.column-comments {
+	width: 55px;
+	display: none;
+	padding: 0 20px;
+	@include respond($md) {
+		width: 70px;
+		display: table-cell;
+	}
+}
+
+table.wp-list-table thead tr th.check-column label, 
+table.wp-list-table tfoot tr th.check-column label,
+table.wp-list-table tbody tr th.check-column label {
+	margin-left: 20px !important;
+	@include respond($md) {
+		margin-left: 35px !important;
+	}
+}
+
+table.wp-list-table tbody tr td.column-username img,
+table.wp-list-table tbody tr td.column-username strong {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+table.wp-list-table tbody tr td.column-username .row-actions {
+	margin-top: 10px;
+}
+
+table.wp-list-table tbody tr th.check-column input[type="checkbox"] + label span {
+	margin-bottom: 0;
+}
+
+table.wp-list-table thead tr td:last-child, 
+table.wp-list-table tfoot tr td:last-child,
+table.wp-list-table tbody tr td:last-child {
+	padding-right: 20px !important;
+	@include respond($md) {
+		padding-right: 35px !important;
+	}
+}
+
+table.wp-list-table thead tr .column-post_thumb:last-child, 
+table.wp-list-table tfoot tr .column-post_thumb:last-child,
+table.wp-list-table tbody tr .column-post_thumb:last-child {
+	display: none;
+	@include respond($md) {
+		display: table-cell;
+	}
+}
+
+td.column-post_thumb,
+th.column-post_thumb {
+	width: 85px;
+	@include respond($md) {
+		width: 95px;
+	}
+}
+
+table.wp-list-table thead tr th.column-post_thumb div {
+	display: none;
+}
+
+td.column-post_thumb img {
+	width: 50px;
+	height: auto;
+	vertical-align: top;
+	margin-left: 20px;
+	@include respond($md) {
+		width: 75px;
+		margin-left: 0;
+	}
+}
+
+td.column-post_thumb img ~ .wp-menu-image {
+	display: none;
+}
+
+td.column-post_thumb .wp-menu-image {
+	display: none;
+	width: 50px;
+	height: 50px;
+	background-color: #eee;
+	background-color: $hr-color;
+	display: block;
+	text-align: center;
+	color: $text-color;
+	padding-top: 14px;
+	border-bottom: 2px solid #ccc;
+	margin-left: 20px;
+	margin-right: 0;
+	@include border-radius(50%);
+	@include respond($md) {
+		padding-top: 23px;
+		margin-left: 0;
+		width: 75px;
+		height: 75px;
+	}
+}
+
+td.column-post_thumb .wp-menu-image.dashicons-before:before {
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+	@include respond($md) {
+		font-size: 30px;
+		width: 30px;
+		height: 30px;
+	}
+}
+
+table.wp-list-table tbody tr td.plugin-title,
+table.wp-list-table tbody tr td.post-title,
+table.wp-list-table tbody tr td.page-title,
+table.wp-list-table tbody tr td.column-title {
+	padding-left: 20px;
+	padding-right: 20px;
+	@include respond($md) {
+		padding-left: 0px;
+	}
+}
+
+table.wp-list-table thead tr th.column-comments > div > a {
+	width: 20px;
+	height: 20px;
+	display: block;
+	background-color: $text-color;
+}
+
+// List Pages
+.column-author,
+.column-date,
+.column-comments,
+.column-description {
+	display: none;
+	@include respond($md) {
+		display: table-cell;
+	}
+}
+
+.post-state {
+	color: $light-text-color;
+	font-weight: 500;
+}
+
+form#posts-filter {
+	margin: 0;
+}
+
+.tablenav.top {
+	background-color: #fff;
+	width: 209px;
+	border-width: 0 0px 1px 1px;
+	border-style: solid;
+	border-color: $hr-color;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1200;
+	display: none;
+	@include respond($lg) {
+		display: block;
+	}
+}
+
+.tablenav.top > div > input[type=submit] {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 59px;
+	height: 59px;
+	text-indent: -9999px;
+	overflow: hidden;
+	@include border-radius(0);
+	border: none;
+	background-image: url(../../images/check-blk.png);
+	background-image: url(../../images/check-blk.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	@include opacity(.7);
+	background-color: $hr-color;
+	border-color: $hr-color;
+	@include transition((opacity $speed ease-in-out));
+}
+
+.tablenav.top > div > input[type=submit]:hover,
+.tablenav.top > div > input[type=submit]:focus {
+	@include opacity(1);
+}
+
+.tablenav.top > div > label {
+	display: block;
+	border-top: 1px solid $hr-color;
+	padding: 10px 20px;
+	display: none;
+}
+
+.tablenav.top .tablenav-pages {
+	display: none;
+}
+
+.tablenav.top > div > select {
+	@include border-radius(0);
+	background-color: transparent;
+	border-width: 0;
+	border-color: $hr-color;
+	height: 59px;
+	font-size: 14px;
+	margin: 0;
+	border-right: 5px solid transparent;
+	width: 150px;
+	padding-left: 20px;
+	display: inline-block;
+	margin-right: -.25em;
+}
+
+.tablenav.top > div > select:hover {
+	background-color: $bg-color;
+	border-right: 5px solid $bg-color;
+}
+
+// Filters
+.hyperpress-filters {
+	background-color: $hr-color;
+	padding: 20px 20px 11px;
+	position: fixed;
+	top: -142px;
+	left: 0;
+	right: 0;
+	z-index: 700;
+	width: 100%;
+	@include transition((top $medium ease-in-out, left $medium ease-in-out));
+	@include respond($md) {
+		top: -94px;
+		padding: 27px 35px 19px;
+	}
+	@include respond($lg) {
+		left: $sidebar-width;
+		top: -112px;
+	}
+}
+
+.hyperpress-filters-open .hyperpress-filters {
+	top: 60px;
+}
+
+.hyperpress-filters-open table.wp-list-table thead tr th > div {
+	top: 214px;
+}
+
+.hyperpress-filters label {
+	font-size: 13px;
+	font-weight: 700;
+	color: $light-text-color;
+	display: block;
+	margin-bottom: 2px;
+}
+
+.hyperpress-filters .alignleft.actions {
+	margin-top: 12px;
+	@include respond($md) {
+		display: inline-block;
+		width: 48.5%;
+		max-width: 300px;
+		margin-top: 0;
+		vertical-align: top;
+	}
+}
+
+.search-box,
+.search-form {
+  position: relative;
+  padding: 0;
+  background-color: transparent;
+  max-width: none;
+  margin: 0;
+  @include respond($md) {
+  	display: inline-block;
+  	width: 48.5%;
+  	max-width: 300px;
+  	margin-right: 3%;
+  	vertical-align: top;
+  }
+}
+
+.search-box label {
+  display: none;
+  display: block;
+  @include respond($md) {
+  	display: block;
+  }
+}
+
+.search-box input[type=submit] {
+	position: absolute;
+	left: 0px;
+	top: 21px;
+	height: 33px;
+	width: 34px;
+	background-image: url(../../images/search-blk.png);
+	background-image: url(../../images/search-blk.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+  overflow: hidden;
+  @include opacity(.5);
+  background-color: transparent;
+  border: none;
+  @include transition((opacity $speed ease-in-out));
+}
+
+.search-box input[type=submit]:hover,
+.search-box input[type=submit]:focus,
+.search-box input[type=search]:focus ~ input[type=submit] {
+	background-image: url(../../images/search-blk.png);
+	background-image: url(../../images/search-blk.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  @include opacity(.9);
+  background-color: transparent;
+}
+
+.search-box input[type=search],
+.hyperpress-filters .alignleft.actions select {
+	background-color: $bg-color;
+	border-width: 0 0 2px 0;
+	border-color: #ccc;
+	margin: 0;
+	padding-left: 30px;
+	font-size: 14px;
+	padding-top: 0;
+	line-height: 20px;
+	width: 100%;
+}
+
+.hyperpress-filters .alignleft.actions select {
+	padding-left: 10px;
+}
+
+.search-box input[type=search]:hover,
+.search-box input[type=search]:focus {
+	background-color: #fff;
+}
+
+table.wp-list-table tbody tr.bulk-edit,
+table.wp-list-table tbody tr.quick-edit-row {
+	background-color: $hr-color;
+}
+
+table.wp-list-table tbody tr.bulk-edit td,
+table.wp-list-table tbody tr.quick-edit-row td {
+	padding: 20px;
+	@include respond($md) {
+		padding: 35px;
+	}
+}
+
+table.wp-list-table tbody tr.plugin-update-tr td {
+	background-color: $hr-color;
+	padding: 10px 20px;
+	font-weight: 700;
+	line-height: 1.4em;
+	@include respond($md) {
+		padding: 15px 35px;
+	}
+}
+
+table.wp-list-table tbody tr.plugin-update-tr td a {
+	color: #000;
+}
+
+ul.subsubsub {
+	list-style: none;
+	padding: 15px 0 0 0;
+	margin: 0;
+	@include respond($md) {
+		padding: 20px 0 0 0;
+	}
+}
+
+ul.subsubsub li {
+	display: inline-block;
+}
+
+ul.subsubsub li a {
+	font-weight: 700;
+	font-size: 14px;
+	color: $light-text-color;
+}
+
+ul.subsubsub li a:hover,
+ul.subsubsub li a:focus,
+ul.subsubsub li a.current {
+	color: $text-color;
+}
+
+.bottom .tablenav-pages {
+	text-align: center;
+	background-color: #fff;
+	padding: 25px 0 35px;
+	margin-bottom: 0;
+}
+
+.bottom .tablenav-pages a {
+	font-size: 45px;
+	color: $text-color;
+	vertical-align: top;
+	display: inline-block;
+	background-color: $hr-color;
+	height: 40px;
+	width: 40px;
+	padding-top: 5px;
+	text-align: center;
+	margin: -9px 5px 0;
+	color: #000;
+	@include border-radius(50%);
+	border: 1px solid $hr-color;
+	@include opacity(.7);
+}
+
+.no-pages .pagination-links,
+.one-page .pagination-links {
+	display: none;
+}
+
+.bottom .tablenav-pages a:hover {
+	border-color: #ccc;
+	@include opacity(1);
+}
+
+.bottom .tablenav-pages a.next-page,
+.bottom .tablenav-pages a.last-page {
+	padding-left: 2px;
+}
+
+.bottom .tablenav-pages a.prev-page,
+.bottom .tablenav-pages a.first-page {
+	padding-right: 2px;
+}
+
+.paging-input {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.bottom .tablenav-pages a.disabled {
+	@include opacity(.4);
+	color: $light-text-color;
+	cursor: default;
+}
+
+.bottom .tablenav-pages .displaying-num {
+	display: block;
+	margin: 0 auto 20px;
+	font-size: 12px;
+	font-weight: 700;
+	color: $light-text-color;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	width: 265px;
+}
+
+.bottom .tablenav-pages.no-pages .displaying-num,
+.bottom .tablenav-pages.one-page .displaying-num {
+	margin: 10px auto -4px;
+}
+
+.bottom .tablenav-pages .paging-input {
+	font-weight: 500;
+	font-size: 16px;
+}
+
+// ACF Style Edits
+#acf-cols {
+	clear: none;
+}
+
+#acf-col-right {
+	display: none;
+	padding-top: 22px !important;
+	@include respond($lg) {
+		display: block;
+	}
+}
+
+#acf-col-left {
+	margin-right: 0;
+	@include respond($lg) {
+		margin-right: 281px;
+		min-height: 100%;
+	}
+}
+
+#acf-col-left .wp-list-table .check-column {
+	padding-left: 0;
+}
+
+.acf-image-uploader img {
+	@include box-shadow(0,0,0,0);
+	border: 1px solid $hr-color;
+}
+
+table.acf-input-table > tbody > tr > td {
+	background: transparent;
+	border: 0 none;
+	border-top: 1px solid $hr-color;
+	border-right: 1px solid $hr-color;
+	padding: 10px;
+	position: relative;
+}
+
+.repeater > table.acf-input-table > tbody > tr > td.field {
+	padding: 10px;
+}
+
+table.acf-input-table {
+	border: 1px solid $hr-color;
+	@include box-shadow(0,0,0,0);
+}
+
+.repeater > table > thead > tr > th.order,
+.repeater > table > tbody > tr > td.order {
+	font-weight: 700;
+	color: $light-text-color;
+}
+
+table.acf-input-table > thead {
+	background-color: #f2f2f2;
+}
+
+table.acf-input-table > thead > tr > th {
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid $hr-color;
+	padding: 10px;
+	font-weight: 700;
+}
+
+// Toggles
+#menu-toggle {
+	position: absolute;
+	top: 21px;
+	left: 20px;
+	z-index: 1200;
+	cursor: pointer;
+	@include respond($md) {
+		left: 35px;
+	}
+	@include respond($lg) {
+		display: none;
+	}
+}
+
+#menu-toggle:hover span {
+	background-color: #000;
+}
+
+#menu-toggle span {
+	display: block;
+	width: 17px;
+	height: 3px;
+	margin-bottom: 4px;
+	background-color: #b3b3b3;
+	@include transition((background-color $speed ease-in-out));
+}
+
+#filter-toggle {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	background-image: url(../../images/filter-blk.png);
+	background-image: url(../../images/filter-blk.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 57px;
+	.post-php & {
+		right: 134px;
+	}
+	top: 0px;
+	width: 30px;
+	height: 59px;
+	cursor: pointer;
+	@include transition((opacity $speed ease-in-out, border $speed ease-in-out));
+	@include opacity(.3);
+	@include respond($md) {
+		right: 72px;
+		width: 30px;
+		.post-php & {
+			right: 218px;
+		}
+	}
+	@include respond($lg) {
+		@include opacity(.7);
+		@include border-radius($input-border-radius);
+		background-color: $hr-color;
+		height: 35px;
+		width: 57px;
+		border: $btn-border;
+		border-color: $hr-color;
+		position: relative;
+		position: static;
+		vertical-align: top;
+		margin-top: -4px;
+		margin-left: 10px;
+	}
+}
+
+#filter-toggle:hover,
+#filter-toggle:focus {
+	@include opacity(1);
+	border-color: #ccc;
+}
+
+a.add-new-h2 span,
+#filter-toggle span {
+	background-color: #222;
+	color: $hr-color;
+	padding: 4px 10px;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: none;
+	letter-spacing: 0;
+	position: absolute;
+	top: 52px;
+	margin-left: -1px;
+	line-height: 20px;
+	min-width: 57px;
+	text-align: center;
+	@include opacity(0);
+	visibility: hidden;
+	text-indent: 0;
+	@include transition((opacity $speed ease-in-out, visibility $speed ease-in-out));
+	display: none;
+	@include respond($lg) {
+		display: block;
+	}
+}
+
+#filter-toggle:hover span,
+a.add-new-h2:hover span {
+	@include opacity(1);
+	visibility: visible;
+	text-indent: 0;
+}
+
+#filter-toggle span:before,
+.add-new-h2 span:before {
+	content: '';
+	display: block;
+	background-color: transparent;
+	width: 0;
+	height: 0;
+	border-bottom: 5px solid #222;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	margin-left: -5px;
+}
+
+// Fajax
+#page{
+  @include opacity(0);
+  @include transition((opacity .5s ease-in-out));
+}
+.loaded #page{
+  @include opacity(1);
+}
+
+// Page Loader
+#pageLoader{
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $bg-color;
+  z-index: 9998;
+  @include transition((background-color .5s ease-in-out, opacity .5s ease-in-out, visibility .5s ease-in-out));
+  @include opacity(1);
+  visibility: visible;
+  @include respond($lg) {
+  	left: $sidebar-width;
+  }
+}
+
+#pageLoader .loader {
+  width: 90px;
+  height: 20px;
+  top: 50%;
+  margin-top: -35px;
+  left: 50%;
+  margin-left: -35px;
+  position: relative;
+  z-index: 9999;
+  background-image: url(../../images/temp-loader.gif);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include transition((opacity .5s ease-in-out));
+  //background-color: $text-color;
+  // @include transition((opacity .5s ease-in-out));
+  // @include animation(pulsate .9s infinite);
+}
+
+@include keyframes(pulsate) {
+  0%   { @include opacity(1); }
+  50% { @include opacity(.25); }
+  100% { @include opacity(1); }
+}
+.loaded #pageLoader{
+  @include opacity(0);
+  visibility: hidden;
+}
+
+.loaded #pageLoader .loader {
+	@include opacity(0);
+}
+
+body {
+  background-color: $bg-color;
+  min-height: 100%; 
+  overflow-y: hidden;
+}
+
+.loaded body{
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+
+.no-js body {
+  @include opacity(1);
+}
+
+// Edit Pages
+#titlediv {
+	@include respond($xlg) {
+		margin-right: 300px;
+	}
+}
+
+#titlewrap input[type=text] {
+	font-size: 20px;
+	height: 40px;
+}
+
+#side-sortables {
+	font-size: 14px;
+	@include respond($xlg) {
+		width: 300px;
+		background-color: #fff;
+		border-left: 1px solid $hr-color;
+		position: absolute;
+		right: 0;
+		top: 60px;
+		min-height: 100%;
+	}
+}
+
+#side-sortables h3.hndle {
+	padding: 15px 0 10px;
+	@include respond($md) {
+		padding: 20px 0 10px;
+	}
+}
+
+#side-sortables .postbox {
+	border-bottom: 1px solid $hr-color;
+	padding: 0;
+	@include respond($xlg) {
+		background-color: #fff;
+		padding: 0px 35px 10px;
+	}
+}
+
+#postbox-container-2,
+#postdivrich {
+	@include respond($xlg) {
+		margin-right: 300px;
+	}
+}
+
+.postbox {
+	position: relative;
+	overflow: hidden;
+}
+
+.postbox.closed {
+	height: 60px;
+}
+
+#side-sortables .postbox .handlediv {
+	position: absolute;
+	top: 20px;
+	right: 35px;
+	width: 20px;
+	height: 20px;
+	background-color: red;
+}
+
+#publishing-action,
+.post-php .submit input[type=submit] {
+	position: fixed;
+	top: 0;
+	right: 20px;
+	z-index: 1100;
+	@include respond($md) {
+		right: 35px;
+	}
+}
+
+#publishing-action #publish,
+.submit input[type=submit] {
+	background-color: $hyperpress-accent;
+	border-width: 2px 0;
+	border-style: solid;
+	border-color: $hyperpress-accent;;
+	background-image: url(../../images/check-wht.png);
+	background-image: url(../../images/check-wht.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+	@include transition((opacity $speed ease-in-out, border-color $speed ease-in-out));
+	@include respond($lg) {
+	}
+}
+
+#publishing-action #publish:hover,
+#publishing-action #publish:focus,
+.submit input[type=submit]:hover,
+.submit input[type=submit]:focus {
+	background-color: $hyperpress-accent;
+	border-color: $hyperpress-accent;
+	@include box-shadow(0, 0, 0, 0);
+	@include opacity(.8);
+	background: $hyperpress-accent url("../../images/check-wht.png") no-repeat center !important;
+	background: $hyperpress-accent url("../../images/check-wht.svg") no-repeat center !important;
+}
+
+#publishing-action #publish:active,
+.wp-core-ui #publishing-action .button-primary.disabled,
+.wp-core-ui .submit input[type=submit].button-primary.disabled {
+	background: $hyperpress-accent url("../../images/check-wht.png") no-repeat center !important;
+	background: $hyperpress-accent url("../../images/check-wht.svg") no-repeat center !important;
+	@include opacity(1);
+	border-top: 2px solid blue !important;
+	border-bottom-color: $hyperpress-accent !important;
+}
+
+#preview-action {
+	@include respond($md) {
+		position: fixed;
+		top: 0;
+		right: 104px;
+		z-index: 1100;
+	}
+}
+
+.wp-core-ui #preview-action .button {
+	text-indent: -9999px;
+	overflow: hidden;
+	background: $hr-color url("../../images/preview-blk.png") no-repeat center !important;
+	background: $hr-color url("../../images/preview-blk.svg") no-repeat center !important;
+	@include opacity(.7);
+	border-color: $hr-color;
+	@include transition((opacity $speed ease-in-out, border-color $speed ease-in-out));
+}
+
+.wp-core-ui #preview-action .button:hover,
+.wp-core-ui #preview-action .button:focus {
+	border-color: #ccc;
+	@include opacity(1);
+}
+
+#publishing-action input[type=submit],
+#preview-action a,
+.submit input[type=submit] {
+	width: 57px;
+	height: 35px;
+	margin-top: 12px;
+}
+
+#submitdiv {
+	//background-color: #fff;
+}
+
+.timestamp-wrap label {
+	display: none;
+}
+
+.timestamp-wrap input,
+.timestamp-wrap select {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: -6px;
+	text-align: center;
+	font-size: 12px;
+	width: auto;
+	min-width: none;
+	height: $btn-tiny-height;
+	padding: 2px 5px 0;
+	background-image: none;
+}
+
+.timestamp-wrap select {
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#edit-slug-box {
+	font-size: 14px;
+	color: $light-text-color;
+}
+
+.wrap > #message {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	background-color: $hyperpress-accent;
+	z-index: 9000;
+	color: #fff;
+	font-weight: 700;
+	padding: 10px 20px;
+	@include opacity(1); 
+	visibility: visible;
+	@include animation(delayFadeOut 1s ease-out 3s forwards);
+	@include transition((opacity $speed ease-in-out, visibility $speed ease-in-out));
+	@include respond($md) {
+		padding: 10px 35px;
+	}
+	@include respond($lg) {
+		left: $sidebar-width;
+	}
+}
+  @-o-keyframes delayFadeOut { 100%{ @include opacity(0); visibility: hidden; }; };
+  @-moz-keyframes delayFadeOut { 100%{ @include opacity(0); visibility: hidden; }; };
+  @-webkit-keyframes delayFadeOut { 100%{ @include opacity(0); visibility: hidden; }; }; 
+  @-keyframes delayFadeOut { 100%{ @include opacity(0); visibility: hidden; }; };
+	
+
+
+.wrap > #message a {
+	color: #fff;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+.wrap > #message a:hover {
+	border-bottom: 1px solid #fff;
+}
+
+.wrap > #message p {
+	margin: 0;
+}
+
+// Screen Options
+#screen-meta-links {
+	position: fixed;
+	z-index: 1200;
+	display: none;
+}
+
+#screen-meta {
+	position: fixed;
+	z-index: 9999;
+	right: -300px;
+	top: 0px;
+	bottom: 0px;
+	width: 85%;
+	max-width: 300px;
+	background-color: #fff;
+	position: fixed;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	@include transition((right $medium ease-in-out));
+}
+
+#screen-meta::-webkit-scrollbar {
+    width: 0px;
+}
+ 
+#screen-meta::-webkit-scrollbar-track {
+	border-right: 0px solid transparent;
+}
+ 
+#screen-meta::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  outline: none;
+}
+
+#screen-meta div#screen-options-wrap,
+#screen-meta div#screen-options-wrap.hidden { 
+	display: block !Important;
+	border-bottom: 1px solid $hr-color;
+	padding: 20px;
+}
+
+#screen-meta div#contextual-help-wrap p,
+#screen-meta div#screen-options-wrap p {
+	font-size: 12px;
+	line-height: 1.5em;
+}
+
+.loaded .hyperpress-screen-options-open #pageLoader {
+	visibility: visible;
+	@include opacity(.2);
+	background-color: #000;
+	top: 0px;
+}
+
+.columns-prefs > label {
+	margin-right: 14px;
+}
+
+.loaded .hyperpress-screen-options-open #pageLoader .loader {
+	display: none;
+}
+
+.hyperpress-screen-options-open #screen-meta {
+	right: 0;
+}
+
+// Settings and Table Pages
+.form-field th {
+	width: 33.334%;
+}
+
+// Menu Editor Plugin Style
+.ws_container { 
+	background-color: $hr-color;
+	border-width: 0 0 2px 0;
+	border-bottom-color: #ccc;
+	margin-bottom: 0;
+	@include border-radius($input-border-radius);
+	color: $text-color;
+	font-weight: 700;
+	padding: 4px 3px 3px 5px;
+}
+
+#ws_menu_editor .ws_active {
+	background-color: $hyperpress-accent;
+	border-bottom-color: blue;
+	color: #fff;
+}
+
+.ws_edit_link,
+a.ws_edit_link:hover {
+	background-image: url(../../images/arrow-thick-wht.png);
+	background-image: url(../../images/arrow-thick-wht.svg);
+	background-color: rgba(0,0,0,.2);
+	background-position: 12px center;
+}
+
+.ws_edit_link {
+	height: 24px;
+	width: 35px;
+	margin-right: 2px;
+	margin-left: 7px;
+}
+
+a.ws_edit_link:hover {
+	background-color: rgba(0,0,0,.5)
+}
+
+// TinyMCE
+.wp-editor-container {
+	border: 1px solid #ddd;
+}
+
+div.mce-toolbar-grp {
+	margin-top: -4px;
+}
+
+// Footer
+#wpfooter {
+	padding: 20px;
+	position: relative;
+	background-color: $bg-color;
+	@include respond($md) {
+		padding: 20px 35px;
+	}
+	@include respond($lg) {
+		background-color: transparent;
+		margin-left: $sidebar-width;
+	}
+}
+
+#wpfooter #hyperpress-screen-option-toggle {
+	.post-php & {
+		display: none;
+	}
+	display: block;
+	width: 20px;
+	height: 20px;
+	@include opacity(.25);
+	cursor: pointer;
+	text-indent: -9999px;
+	overflow: hidden;
+	z-index: 999999;
+	background-image: url(../../images/screen-op-icon.png);
+	background-image: url(../../images/screen-op-icon.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	@include transition((opacity $speed ease-in-out));
+}
+
+#wpfooter #hyperpress-screen-option-toggle:hover {
+	@include opacity(.5);
+}
+
+// Media Page
+.media-frame-content {
+	position: absolute;
+	top: 84px;
+	left: 200px;
+	right: 0;
+	bottom: 61px;
+	height: auto;
+	width: auto;
+	margin: 0;
+	overflow: auto;
+	background: #fff;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.media-frame-content,
+.media-frame,
+.media-frame-menu,
+.media-frame-title,
+.media-frame-router,
+.media-frame-toolbar,
+.media-menu,
+.attachments-browser .attachments, 
+.attachments-browser .uploader-inline {
+	position: static;
+}
+
+.attachment-preview {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.attachments-browser .attachments {
+	padding: 2px 12px 8px;
+	@include respond($md) {
+		padding: 2px 27px 8px;
+	}
+}
+
+.attachment.details:focus, .attachment:focus, .selected.attachment:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: 0;
+}
+
+.media-toolbar.wp-filter,
+.upload-php .wp-filter {
+	position: fixed;
+	top: 60px;
+	left: 0;
+	right: 0;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid $hr-color;
+	height: 60px;
+	padding: 0 20px;
+	@include respond($md) {
+		padding: 0 35px;
+	}
+	@include respond($lg) {
+		left: $sidebar-width;
+	}
+}
+
+.attachment.details .check,
+.attachment.selected .check:focus,
+.media-frame.mode-grid .attachment.selected .check {
+	background-color: $hyperpress-accent;
+	@include border-radius($input-border-radius);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.selected.attachment {
+	-webkit-box-shadow: inset 0 0 0 5px #fff,inset 0 0 0 6px #999;
+	box-shadow: inset 0 0 0 5px #fff,inset 0 0 0 6px #999;
+}
+
+.selected.attachment:focus {
+	-webkit-box-shadow: inset 0 0 0 5px #fff,inset 0 0 0 6px $hyperpress-accent;
+	box-shadow: inset 0 0 0 5px #fff,inset 0 0 0 6px $hyperpress-accent;	
+}
+
+.media-frame select,
+.upload-php .wp-filter select {
+	width: 150px;
+}
+
+.attachments-browser .media-toolbar-primary>.media-button,
+.attachments-browser .media-toolbar-primary>.media-button-group,
+.attachments-browser .media-toolbar-secondary>.media-button,
+.attachments-browser .media-toolbar-secondary>.media-button-group,
+.media-frame select.attachment-filters,
+.media-frame .search {
+	margin-top: 12px;
+	font-family: $main-font;
+}
+
+.media-grid-view-switch {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: .25em;
+}
+
+.view-list,
+.view-grid {
+	width: 20px;
+	height: 35px;
+	margin-top: 12px;
+	margin-right: 10px;
+	margin-left: -.25em;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: inline-block;
+	@include opacity(.35);
+}
+
+.view-list.current,
+.view-grid.current {
+	@include opacity(1);
+}
+
+.view-list {
+	background-image: url(../../images/list-icon.png);
+}
+
+.view-grid {
+	background-image: url(../../images/grid-icon.png);
+}
+
+.attachments-browser .media-toolbar-secondary > .media-button {
+	margin-right: 10px;
+}
+
+// details
+.media-frame input[type=email]:focus,
+.media-frame input[type=number]:focus,
+.media-frame input[type=password]:focus,
+.media-frame input[type=search]:focus,
+.media-frame input[type=text]:focus,
+.media-frame input[type=url]:focus,
+.media-frame select:focus,
+.media-frame textarea:focus {
+	border-color: $hyperpress-accent;
+}

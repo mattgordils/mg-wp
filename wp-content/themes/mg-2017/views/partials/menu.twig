@@ -1,0 +1,18 @@
+<div class="container menu-wrap">
+	<div class="menu">
+		<a class="close-menu">{% include 'icons/close.svg' %}</a>
+		<ul class="nav">
+			{% for item in header_menu.items %}
+				<li class="{{ item.classes | join(' ') }}">
+					<a href="{{ item.link }}" class="transition-link" title="{{ item.title }}">{{ item.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="contact-info small light-text-color">
+			<p><a href="mailto:{{ get_field('email','options') }}">{{ get_field('email','options') }}</a></p>
+			<p></p>
+			<p>{{ get_field('street_address','options') }}<br/>{{ get_field('city','options') }} {{ get_field('state','options') }} {{ get_field('zip','options') }}</p>
+			<p>T <a href="tel:{{ globals.phone }}">{{ globals.phone }}</a></p>
+		</div>
+	</div>
+</div>

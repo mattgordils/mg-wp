@@ -1,0 +1,19 @@
+.ht-loader {
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	z-index: 0;
+	top: 50%;
+	left: 50%;
+	margin: -50px 0 0 -50px;
+	background-size: 100px 100px;
+	video {
+		width: 100px;
+		height: 100px;
+	}
+	display: none;
+}
+
+.animsition {
+	z-index: 1;
+}

@@ -1,0 +1,27 @@
+{% set post = TimberPost(item) %}
+
+<a href="{{ post.link }}" class="transition-link thumb project-thumb">
+	<div class="ratio-container">
+		<div class="cover-area">
+			{% if post.splash_video %}
+		    <video class="cover" data-object-fit="cover" autoplay loop muted playsinline>
+		      <source src="{{ post.get_field('splash_video') }}" type="video/mp4">
+		    </video>
+		  {% else %}
+		  	{% if (layout == 'col-8') or (layout == 'col-12') %}
+		  		<img data-object-fit="cover" class="cover" src="{{ TimberImage(post.thumbnail).src | resize(1500,1000) }}">	
+		  	{% else %}
+		    <img data-object-fit="cover" class="cover" src="{{ TimberImage(post.thumbnail).src | resize(900,600) }}">
+		  	{% endif %}
+		  {% endif %}
+		</div>
+	</div>
+	{% if not hide_info %}
+		<div class="thumb-info">
+			<h3>{{ post.title }}</h3>
+			{% if post.tags %}
+				<p>{{ post.tags | join(', ') }}</p>
+			{% endif %}
+		</div>
+	{% endif %}
+</a>

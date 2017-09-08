@@ -1,0 +1,47 @@
+@font-face {
+		font-family: 'Avenir';
+		src: url('../fonts/avenir/avenirnextltpro-regular.eot');
+		src: url('../fonts/avenir/avenirnextltpro-regular.eot?#iefix') format('embedded-opentype'),
+				 url('../fonts/avenir/avenirnextltpro-regular.woff') format('woff'),
+				 url('../fonts/avenir/avenirnextltpro-regular.ttf') format('truetype'),
+				 url('../fonts/avenir/avenirnextltpro-regular.svg#avenir-reg') format('svg');
+		font-weight: 100;
+		font-style: normal;
+}
+
+@font-face {
+		font-family: 'Avenir';
+		src: url('../fonts/avenir/avenirnextltpro-medium.eot');
+		src: url('../fonts/avenir/avenirnextltpro-medium.eot?#iefix') format('embedded-opentype'),
+				 url('../fonts/avenir/avenirnextltpro-medium.woff') format('woff'),
+				 url('../fonts/avenir/avenirnextltpro-medium.ttf') format('truetype'),
+				 url('../fonts/avenir/avenirnextltpro-medium.svg#avenir-semi') format('svg');
+		font-weight: 500;
+		font-style: normal;
+}
+
+@font-face {
+		font-family: 'Avenir';
+		src: url('../fonts/avenir/avenirnextltpro-demi.eot');
+		src: url('../fonts/avenir/avenirnextltpro-demi.eot?#iefix') format('embedded-opentype'),
+				 url('../fonts/avenir/avenirnextltpro-demi.woff') format('woff'),
+				 url('../fonts/avenir/avenirnextltpro-demi.ttf') format('truetype'),
+				 url('../fonts/avenir/avenirnextltpro-demi.svg#avenir-demi') format('svg');
+		font-weight: 700;
+		font-style: normal;
+}
+
+@font-face {
+		font-family: 'Avenir';
+		src: url('../fonts/avenir/avenirnextltpro-bold.eot');
+		src: url('../fonts/avenir/avenirnextltpro-bold.eot?#iefix') format('embedded-opentype'),
+				 url('../fonts/avenir/avenirnextltpro-bold.woff') format('woff'),
+				 url('../fonts/avenir/avenirnextltpro-bold.ttf') format('truetype'),
+				 url('../fonts/avenir/avenirnextltpro-bold.svg#avenir-bold') format('svg');
+		font-weight: 900;
+		font-style: normal;
+}
+
+body, .btn, input[type="submit"] {
+	font-family: 'Avenir', sans-serif;
+}

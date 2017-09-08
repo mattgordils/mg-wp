@@ -1,0 +1,18 @@
+{% set post = TimberPost(item) %}
+
+<a class="thumb transition-link" href="{{ post.link }}">
+  {% if post.splash_video %}
+    <video class="cover" autoplay loop muted playsinline>
+      <source src="{{ post.get_field('splash_video') }}" type="video/mp4">
+    </video>
+  {% else %}
+    <img src="{{ TimberImage(post.thumbnail).src | resize(1200) }}">
+  {% endif %}
+	<div class="thumb-info">
+		<h6>{{ post.post_type == 'project' ? 'Project' : post.categories.0.title }}</h6>
+		<h3>{{ post.title }}</h3>
+		{% if post.content %}
+		  <p>{{ post.content }}</p>
+		{% endif %}
+	</div>
+</a>

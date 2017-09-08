@@ -1,0 +1,14 @@
+header {
+	padding: ($mobile-margin * 1.2) 0 0;
+	@include respond($md) {
+		padding: $margin 0 0;
+	}
+	.intro {
+		h1, h2 {
+			max-width: 12em;
+		}
+		h2 {
+			// opacity: .4;
+		}
+	}
+}

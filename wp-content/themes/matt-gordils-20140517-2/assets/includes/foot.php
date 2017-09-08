@@ -1,0 +1,2 @@
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
+<script type="text/javascript">var templateUrl = '<?php get_bloginfo("template_url"); ?>';</script>

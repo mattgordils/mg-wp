@@ -1,0 +1,24 @@
+// For Waterfall (variable height) Layout
+
+.waterfall {
+  @include respond($sm) {
+    margin: 0 (-$half-gutter);
+    overflow: hidden;
+  }
+}
+
+.waterfall article {
+  @include respond($sm) {
+    padding: 0 $half-gutter $gutter;
+  }
+}
+
+.waterfall article > div {
+  background-color: $dropdown-color;
+  padding: 15px;
+  margin: 0px;
+}
+
+.waterfall article > div img {
+  margin: 0 auto;
+}

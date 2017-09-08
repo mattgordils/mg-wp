@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+{% set body_class = 'project-page' %}
+
+{% block content %}
+
+	{% include 'components/top-area.twig' %}
+
+	{% for block in post.get_field('blocks') %}
+
+		{% if block.acf_fc_layout == 'large_text_area' %}
+			{% include 'components/flexible-content/large-text.twig' %}
+
+		{% elseif block.acf_fc_layout == 'large_image' %}
+			
+			{% if block.full_width %}
+				{% include 'components/flexible-content/full-width-image.twig' %}
+			{% else %}
+				{% include 'components/flexible-content/wide-image.twig' %}
+			{% endif %}
+
+		{% elseif block.acf_fc_layout == 'two_up_images' %}
+			{% include 'components/flexible-content/two-up-images.twig' %}
+
+		{% elseif block.acf_fc_layout == 'right_text' %}
+			{% include 'components/flexible-content/two-up-text.twig' %}
+
+		{% elseif block.acf_fc_layout == 'callout' %}
+			{% include 'components/flexible-content/callout.twig' %}
+
+		{% endif %}
+
+	{% endfor %}
+
+	<section class="mid-grey">
+		<div class="container extra-spaced flex-center narrow">
+			<div class="large align-center">
+				<h3 class="h1">Lets start your project</h3>
+				<a href="mailto:{{ options.email }}" class="underlined-link">Contact Us</a>
+			</div>
+		</div>
+	</section>
+
+	{% if post.related_projects %}
+		<section class="dark clipped-section">
+			<div class="clip">
+				{% include 'partials/header.twig' with { 'logo': 'false', 'style': 'white' } %}
+			</div>
+			<div class="section-header">
+				<div class="container">
+					<h3>More Projects</h3>
+				</div>
+			</div>
+			<div class="container no-top-space no-bottom-space">
+				<div class="inline-grid more-projects">
+					{% set hide_info = post.hide_info %}
+					{% for item in post.related_projects %}
+						<div class="col">
+						{% include 'components/project-thumb.twig' %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	{% endif %}
+{% endblock %}{# end content #}

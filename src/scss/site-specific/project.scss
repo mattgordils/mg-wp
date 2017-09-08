@@ -1,0 +1,137 @@
+$project-padding : 15%;
+
+.project-page {
+	.label {
+		// font-size: 10px;
+		// text-transform: uppercase;
+		// letter-spacing: $tracked-out;
+	}
+}
+
+.project-images {
+	.container {
+		// max-width: 1000px;
+	}
+	.browser,
+	.poster,
+	.mobile {
+		padding: $project-padding / 2;
+		background: #f2f2f2;
+		background: #efefef;
+		background: lighten(black, 11%);
+		@include respond($md) {
+			padding: $project-padding;
+		}
+		img,
+		video {
+			margin: 0 auto;
+			// box-shadow: 0 1rem 2rem rgba(0, 0, 0, .07);
+			// box-shadow: 0 0 60px -10px rgba(0, 0, 0, .2);
+		}
+		&.left {
+			margin-right: -$gutter/2;
+			padding-right: 5%;
+		}
+		&.right {
+			margin-left: -$gutter/2;
+			padding-left: 5%;
+		}
+		&.center {
+			padding-left: 5%;
+			padding-right: 5%;
+			margin-left: -$gutter/2;
+			margin-right: -$gutter/2;
+		}
+	}
+	.col-12 {
+		.browser,
+		.poster,
+		.mobile {
+			@include respond($md) {
+				padding: $project-padding/2;
+			}
+		}
+	}
+	.col-4 {
+		.browser,
+		.poster,
+		.mobile {
+			@include respond($md) {
+				padding-top: $project-padding * 1.5;
+				padding-bottom: $project-padding * 1.5;
+			}
+		}
+	}
+	.browser,
+	.mobile {
+		img,
+		video {
+			width: 700px;
+			border-radius: 3px;
+		}
+		@include respond-smaller-than($md) {
+			padding: 0;
+			background: transparent !important;
+		}
+	}
+	.mobile {
+		padding: $project-padding;
+		img,
+		video {
+			width: 300px;
+		}
+	}
+	.poster {
+		img {
+			width: 700px;
+		}
+	}
+
+	@include respond($md) {
+		.no-gutter-first {
+			margin-right: -$gutter/2;
+			&.browser,
+			&.poster,
+			&.mobile {
+				padding-right: $project-padding/2;
+			}
+		}
+		.no-gutter-last {
+			margin-left: -$gutter/2;
+			&.browser,
+			&.poster,
+			&.mobile {
+				padding-left: $project-padding/2;
+			}
+		}
+		.col-4 {
+			.no-gutter-first {
+				margin-right: calc((-#{$gutter} / 3)*2 - 2px);
+				&.mobile {
+					padding-left: $project-padding * 1.5;
+					padding-right: $project-padding * .5;
+				}
+			}
+			.no-gutter-middle {
+				margin-right: calc(-#{$gutter} / 3 - 1px);
+				margin-left: calc(-#{$gutter} / 3 - 1px);
+			}
+			.no-gutter-last {
+				margin-left: calc((-#{$gutter} / 3)*2 - 2px);
+				&.mobile {
+					padding-right: $project-padding * 1.5;
+					padding-left: $project-padding * .5;
+				}
+			}
+		}
+	}
+}
+
+.project-info-block {
+	@include respond($lg) {
+		min-height: calc(100vh - 48px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

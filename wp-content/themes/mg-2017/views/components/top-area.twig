@@ -1,0 +1,45 @@
+{% if post.splash_video or post.splash_image %}
+	
+	{% set contentColor = post.white_text ? 'white' : '' %}
+	{% set contentType = post.splash_video ? 'video' : '' %}
+	{% set textOverlay = post.splash_title %}
+	{% set overlayPosition = 'left-center' %}
+	{% set linkText = post.splash_link_title %}
+	{% set linkType = post.link_type %}
+	{% set linkUrl = post.link_type ? post.external_link : post.splash_link %}
+	{% set videoUrl = post.get_field('splash_video') %}
+	{% set imageUrl = TimberImage(post.get_field('splash_image')).src | resize(2000,1200) %}
+	{% set fullHeight = post.full_height %}
+	{% set parallax = post.parallax %}
+
+	<section class="featured-content top-area {% if fullHeight == true %}full-height{% else %}three-quarters-height{% endif %} mid-grey{% if contentColor == 'white' %} clipped-section{% endif %} {% if parallax %} parallax{% endif %}">
+		{% if contentColor == 'white' %}
+			<div class="clip">
+				{% include 'partials/header.twig' with { 'style': 'white' } %}
+			</div>
+		{% endif %}
+		<div class="container flex-{% if overlayPosition %}{{ overlayPosition }}{% else %}center{% endif %}{% if contentColor == 'white' %} bg-color{% endif %}">
+			<div>
+				{% if textOverlay %}
+					<h2 class="h1">{{ textOverlay }}</h2>
+				{% endif %}
+				{% if linkText and linkUrl %}
+					<a class="underlined-link{% if linkType %}{% else %} transition-link{% endif %}" href="{% if linkType %}{{ linkUrl }}
+						{% else %}{{ TimberPost(linkUrl).link }}{% endif %}" 
+						{% if linkType %} target="_blank"{% endif %}>
+						{{ linkText }}
+					</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class="cover-area">
+			{% if contentType == 'video' %}
+	    <video class="cover" data-object-fit="cover" autoplay loop muted playsinline>
+	      <source src="{{ videoUrl }}" type="video/mp4">
+	    </video>
+	    {% else %}
+	    	<img class="cover" data-object-fit="cover" src="{{ imageUrl }}">
+	    {% endif %}
+		</div>
+	</section>
+{% endif %}

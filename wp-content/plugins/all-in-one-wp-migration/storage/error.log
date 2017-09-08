@@ -1,0 +1,3 @@
+Aug 14 2017 15:01:43
+{"Number":2,"Message":"rmdir(\/Users\/mattg\/github\/mg-wp-2017\/wp-content\/plugins\/all-in-one-wp-migration\/storage\/bcxpwfhs1p1r): No such file or directory","File":"\/Users\/mattg\/github\/mg-wp-2017\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/filesystem\/class-ai1wm-directory.php","Line":54}
+

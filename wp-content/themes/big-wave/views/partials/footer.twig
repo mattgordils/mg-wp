@@ -1,0 +1,44 @@
+<footer>
+	<section class="dark">
+		<div class="container">
+			<div class="float-grid break-lg">
+				<div class="col-6">
+					<div class="float-grid no-break">
+						<div class="col title">
+							<h5 class="h3">{{ options.footer_left_title }}</h5>
+						</div>
+						<div class="col info">
+							{{ get_field('footer_left_text', 'options') }}
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="float-grid no-break">
+						<div class="col title">
+							<h5 class="h3">{{ options.footer_center_title }}</h5>
+						</div>
+						<div class="col info">
+							{{ get_field('footer_center_text', 'options') }}
+						</div>
+					</div>
+				</div>
+				<div class="col-3 right">
+					<div class="float-grid no-break">
+						<div class="col title">
+							<h5 class="h3">{{ options.footer_right_title }}</h5>
+						</div>
+						<div class="col info">
+							{{ get_field('footer_right_text', 'options') }}
+							<form id="newsletterSignup" class="newsletter-signup" >
+								<input type="email" placeholder="Stay Updated" />
+								<button title="Sign Up" class="circle">
+									{% include 'icons/arrow-right.svg' %}
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
