@@ -1,0 +1,159 @@
+/* line 1, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+/* line 20, ../sass/_reset.scss */
+:focus {
+  outline: 0;
+}
+
+/* line 23, ../sass/_reset.scss */
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+/* line 28, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 32, ../sass/_reset.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* line 36, ../sass/_reset.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+/* line 40, ../sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+/* line 44, ../sass/_reset.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+@keyframes fadein {
+  /* line 2, ../sass/_mixins.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 2, ../sass/_mixins.scss */
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* line 3, ../sass/_mixins.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 3, ../sass/_mixins.scss */
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* line 4, ../sass/_mixins.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 4, ../sass/_mixins.scss */
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* line 5, ../sass/_mixins.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 5, ../sass/_mixins.scss */
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  /* line 15, ../sass/_mixins.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 15, ../sass/_mixins.scss */
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeout {
+  /* line 16, ../sass/_mixins.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 16, ../sass/_mixins.scss */
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeout {
+  /* line 17, ../sass/_mixins.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 17, ../sass/_mixins.scss */
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeout {
+  /* line 18, ../sass/_mixins.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 18, ../sass/_mixins.scss */
+  to {
+    opacity: 0;
+  }
+}
+/* line 1, ../sass/_login.scss */
+.login h1 a {
+  background-image: url("http://josh.stevefuentes.com/wp-content/uploads/2014/08/UGH2TRANSP.gif");
+}
+
+/* line 8, ../sass/style.scss */
+.submit input {
+  background: #000;
+}

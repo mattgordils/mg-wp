@@ -1,0 +1,67 @@
+
+//Admin Bar
+#wp-admin-bar-wp-logo, //Kill WP logo 
+#wp-admin-bar-new-content,
+li#wp-admin-bar-comments,
+li#wp-admin-bar-view,
+#wp-admin-bar-updates,
+ul#adminmenu a:after,
+ul#adminmenu a.wp-has-current-submenu:after, 
+ul#adminmenu>li.current>a.current:after,
+//#edit-slug-buttons,
+#view-post-btn,
+#shortlink ~ a,
+#adminmenu a.menu-top:focus+.wp-submenu, .js #adminmenu .opensub .wp-submenu, .js #adminmenu .sub-open, .no-js li.wp-has-submenu:hover .wp-submenu {
+	display:none !important;
+}
+
+#wpadminbar li#wp-admin-bar-comments, 
+#wpadminbar li#wp-admin-bar-edit, 
+#wpadminbar li#wp-admin-bar-my-account, 
+#wpadminbar li#wp-admin-bar-my-sites, 
+#wpadminbar li#wp-admin-bar-new-content, 
+#wpadminbar li#wp-admin-bar-site-name, 
+#wpadminbar li#wp-admin-bar-updates, 
+#wpadminbar li#wp-admin-bar-wp-logo {
+	@include respond($sm) {
+		display: none;
+	}
+}
+
+//Footer
+#wpfooter {
+	display: none;
+}
+#wpbody-content {
+	padding-bottom: 0px;
+}
+
+// Dropshadows
+#adminmenu .wp-submenu, 
+.folded #adminmenu .wp-has-current-submenu .wp-submenu, 
+.folded #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
+#wpadminbar .menupop .ab-sub-wrapper, 
+#wpadminbar .shortlink-input,
+.postbox,
+div.updated,
+#screen-meta,
+#contextual-help-link-wrap, 
+#screen-options-link-wrap,
+.wp-editor-container,
+.wp-color-result,
+.wp-color-result:focus,
+#post-status-info,
+.plugin-install #the-list td, .plugins .active td, .plugins .active th, .plugins .inactive td, .plugins .inactive th, .upgrade .plugins td, .upgrade .plugins th {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.plugins tr.active+tr.inactive td, .plugins tr.active+tr.inactive th, .plugins tr.active.plugin-update-tr+tr.inactive td, .plugins tr.active.plugin-update-tr+tr.inactive th {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-top: none;
+}
+
+a:active, a:focus {
+	outline: none;
+}

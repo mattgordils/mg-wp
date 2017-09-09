@@ -1,0 +1,12 @@
+{% set text = block.text %}
+{% set link = block.link %}
+<section>
+	<div class="container extra-spaced flex-center">
+		<div class="large align-center">
+			<h3 class="p max-width">{{ block.text }}</h3>
+			{% if block.link %}
+				<a href="{{ block.link }}" class="underlined-link">{{ block.link_text }}</a>
+			{% endif %}
+		</div>
+	</div>
+</section>

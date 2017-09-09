@@ -1,0 +1,171 @@
+$login-bg : #222222;
+$login-text-color : #141414;
+$login-light-text-color : #aaa;
+$login-label-color : $login-text-color;
+
+$input-bg : #eee;
+$input-border : 1px solid $input-bg;
+$input-border-radius : 4px;
+$input-focus-bg : #fff;
+$input-focus-border : 1px solid $input-focus-bg;
+
+$login-btn-bg : #333;
+$login-border : $login-btn-bg;
+$login-btn-color : $login-light-text-color;
+$login-btn-bg-hover : #555;
+$login-border-hover : $login-btn-bg-hover;
+$login-btn-hover-color : #fff;
+
+body.login {
+  background-color: $login-bg;
+}
+
+#login {
+  max-width: 370px;
+  width: 100%;
+  //@include animation(login 1s ease-in-out forwards);
+}
+
+@-o-keyframes login {
+  0% { @include transform(translateY(-50px)); }
+  100% { @include transform(translateY(0px)); }
+}
+@-moz-keyframes login {
+  0% { @include transform(translateY(-50px)); }
+  100% { @include transform(translateY(0px)); }
+}
+@-webkit-keyframes login {
+  0% { @include transform(translateY(-50px)); }
+  100% { @include transform(translateY(0px)); }
+}
+@-keyframes login {
+  0% { @include transform(translateY(-50px)); }
+  100% { @include transform(translateY(0px)); }
+}
+
+.login form {
+  margin-top: 20px;
+  margin-left: 0;
+  padding: 26px 24px 46px;
+  font-weight: 400;
+  overflow: hidden;
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.login label {
+  font-size: 12px;
+  letter-spacing: .02em;
+}
+
+.login form .input,
+.login form input[type=checkbox],
+.login input[type=text] {
+  background-color: $input-bg;
+  border: $input-border;
+  @include border-radius($input-border-radius);
+  font-size: 14px;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-top: 7px;
+  @include transition((background-color $speed ease-in-out, border $speed ease-in-out));
+  &:focus,
+  &:active {
+    background-color: $input-focus-bg;
+    border: $input-border;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+.login.wp-core-ui .button-group.button-large .button, 
+.login.wp-core-ui .button.button-large {
+	float: none;
+	width: 100%;
+  height: 48px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: $login-btn-color;
+  background-color: $login-btn-bg;
+  border: 1px solid $login-btn-bg;
+  @include transition((background-color $speed ease-in-out, border $speed ease-in-out, color $speed ease-in-out));
+  @include border-radius($input-border-radius);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: $login-btn-color;
+  padding-top: 2px;
+  &:hover {
+    background-color: $login-btn-bg-hover;
+    border-color: $login-border-hover;
+    color: $login-btn-hover-color;
+  }
+}
+
+.login #backtoblog {
+	display: none;
+}
+
+.login #nav {
+  margin: 0;
+  margin-top: -135px;
+  text-align: right;
+  font-size: 12px;
+  letter-spacing: .02em;
+  font-weight: 500;
+}
+
+#login form p.forgetmenot {
+  margin-bottom: 20px;
+}
+
+.login form .forgetmenot label {
+  font-size: 12px;
+  line-height: 19px;
+  letter-spacing: .02em;
+  margin-bottom: 10px;
+}
+
+.login form input[type=checkbox] {
+  vertical-align: middle;
+  @include border-radius(3px);
+  margin-top: -3px;
+  margin-bottom: 0;
+}
+
+// Alert
+#login_error,
+.login .message,
+.login #login_error {
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  border: none;
+  background-color: rgba(0,0,0,.85);
+  border-top: 1px solid rgba(255,255,255,.1);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  @include animation(notification 4s ease-in-out forwards);
+}
+
+@-o-keyframes notification {
+  0%, 100% { @include transform(translateY(200px)); }
+  10%, 90% { @include transform(translateY(0px)); }
+}
+@-moz-keyframes notification {
+  0%, 100% { @include transform(translateY(200px)); }
+  10%, 90% { @include transform(translateY(0px)); }
+}
+@-webkit-keyframes notification {
+  0%, 100% { @include transform(translateY(200px)); }
+  10%, 90% { @include transform(translateY(0px)); }
+}
+@-keyframes notification {
+  0%, 100% { @include transform(translateY(200px)); }
+  10%, 90% { @include transform(translateY(0px)); }
+}
