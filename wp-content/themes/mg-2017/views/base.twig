@@ -7,7 +7,8 @@
       {% if page_title %}
         {% include 'partials/header.twig' with {
           'page_title' : page_title,
-          'secondary_text' : secondary_text
+          'secondary_text' : secondary_text,
+          'body_class' : body_class
         } %}
       {% else %}
         {% include 'partials/header.twig' %}

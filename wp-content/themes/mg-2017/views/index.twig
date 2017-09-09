@@ -3,9 +3,9 @@
 
 {% block content %}
 
-	<section>
-		<div class="container no-bottom-space">
-			<div class="inline-grid project-grid no-break v-wide-spaced wide-gutterr">
+	<section class="no-top-space">
+		<div class="container">
+			<div class="inline-grid project-grid no-break v-spaced center">
 				{% for project in projects %}
 
 					{% if project.size == 'third' %}
@@ -22,7 +22,8 @@
 					<div class="col">
 						{% include 'components/project-thumb.twig' with { 
 							'item' : project,
-							'layout' : layout
+							'layout' : layout,
+							'hide_info' : true
 						} %}
 					</div>
 

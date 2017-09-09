@@ -1,20 +1,8 @@
-<section id="info" class="dark full-height info-block" data-bg="#000" data-color="#fff">
-  <div class="container bio">
-    <div class="large-font-size max-width align-center">
+<section id="info" class="info-block">
+  <div class="container narrow align-center">
+    <h3 class="header-style">info</h3>
+    <div class="large-font-size max-width">
       {{ get_field('Bio', 'options') }}
-    </div>
-  </div>
-  <div class="container social wide">
-    <div class="flex-grid break-lg">
-      <div class="col no-grow">
-        <span class="item">{{ get_field('town_state', 'options') }}</span>
-        <a href="mailto:{{ get_field('email', 'options') }}">{{ get_field('email', 'options') }}</a>
-      </div>
-      <div class="col grow align-right">
-        {% for link in get_field('social_media', 'options') %}
-          <a href="{{link.link}}" target="_blank" title="Matt Gordils on {{link.name}}">{{link.name}}</a>
-        {% endfor %}
-      </div>
     </div>
   </div>
 </section>

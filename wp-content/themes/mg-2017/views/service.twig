@@ -6,9 +6,9 @@
 
 {% block content %}
 
-	<section>
-		<div class="container no-bottom-space">
-			<div class="inline-grid project-grid smaller no-break v-wide-spaced">
+	<section class="no-top-space">
+		<div class="container">
+			<div class="inline-grid project-grid no-break v-wide-spaced center">
 				{% for project in term.get_posts('numberposts=5') %}
 
 					{% if project.size == 'third' %}
@@ -34,6 +34,10 @@
 		</div>
 	</section>
 
-	{% include 'components/info-block.twig' %}
+	<section>
+		<div class="container align-center">
+			<a href="/work" class="header-style transition-link">All Work</a>
+		</div>
+	</section>
 
 {% endblock %}{# end content #}

@@ -2,14 +2,11 @@ body,
 html {
 	font-family: $main-font;
 	line-height: $base-line-height;
-	font-size: $base-font-size - 4px;
+	font-size: $base-font-size - 2px;
 	color: $text-color;
 	letter-spacing: $base-letter-spacing;
 	@include font-smooth();
 	@include respond($md) {
-		font-size: $base-font-size - 2px;
-	}
-	@include respond($xlg) {
 		font-size: $base-font-size;
 	}
 }
@@ -152,6 +149,7 @@ p,
 	}
 	a {
 		border-bottom: 1px solid currentcolor;
+		padding-bottom: .1em;
 		&:hover {
 			color: $text-color;
 			border-color: currentcolor;

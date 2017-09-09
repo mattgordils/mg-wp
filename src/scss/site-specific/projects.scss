@@ -42,13 +42,8 @@
 .more-projects-grid {
 	.col {
 		width: 50%;
-		// @include respond($lg) {
-		// 	width: 25%;
-		// }
-	}
-	@include respond($md) {
-		.thumb-info {
-			text-align: left;
+		@include respond($lg) {
+			width: 25%;
 		}
 	}
 }
@@ -83,12 +78,8 @@
 			border-bottom: 1px solid transparent;
 		}
 		.project-services {
-			// margin-top: -.1em;
 			font-size: 1rem;
-			// font-size: 12px;
-			// color: rgba($white, .4);
 			@include respond($xlg) {
-				// font-size: .75rem;
 			}
 		}
 	}

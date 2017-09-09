@@ -21,14 +21,10 @@
 		  {% endif %}
 	  </div>
 	</div>
-	{% if not hide_info %}
-		<div class="thumb-info">
+	{% if hide_info != true %}
+		<div class="thumb-info align-center">
 			<h3 class="project-title">{{ post.title }}</h3>
 			<p class="project-services light-text-color">{{ post.terms | join(', ') }}</p>
-			<!-- {% if post.terms('services') %}
-			adkj
-				<p class="light-text-color">{{ post.terms('service') | join(', ') }}</p>
-			{% endif %} -->
 		</div>
 	{% endif %}
 </a>

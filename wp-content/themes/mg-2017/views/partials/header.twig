@@ -1,37 +1,23 @@
-<header {% if style %}class="{{ style }}"{% endif %}>
-	<div class="container">
-		<div class="float-grid no-break">
-			<div class="col-8">
-				<div class="intro">
-					<h1 class="large-font-size">
-						{% if page_title %}
-							{{ page_title }}
-						{% else %}
-							Matthew Gordils
-						{% endif %}
-					</h1>
-					<h2 class="large-font-size light-text-color">
-						{% if page_title %}
-							{{ secondary_text }}
-						{% else %}
-							Design & front end development
-						{% endif %}
+<header>
+		<div class="intro align-center">
+			<div class="container">
+				<h1 class="header-style title">
+					{% if page_title %}
+						{{ page_title }}
+					{% else %}
+						Matthew Gordils
+					{% endif %}
+				</h1>
+			</div>
+			{% if page_title %}
+				<div class="container narrow">
+					<h2 class="secondary-text">
+						{{ secondary_text }}
 					</h2>
 				</div>
-			</div>
-			<div class="col-4 align-right">
-				{% if 
-					(body_class == 'home-page') or
-					(body_class == 'projects-page')
-				%}
-					<a class="large-font-size light-text-color underlined" href="#info">Info</a>
-				{% elseif (body_class == 'service-page') %}
-					<a class="large-font-size light-text-color underlined transition-link" href="/portfolio">All Work</a>
-				{% else %}
-					<a class="large-font-size light-text-color underlined transition-link" href="/">Work</a>
-				{% endif %}
-				
-			</div>
+			{% endif %}
+			{% if body_class == 'service-page' %}
+				<p class="tight-space-before"><a href="/portfolio" class="transition-link"><span class="material-icons">arrow_back</span> All Work</a></p>
+			{% endif %}
 		</div>
-	</div>
 </header>

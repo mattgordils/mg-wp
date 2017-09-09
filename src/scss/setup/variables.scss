@@ -1,29 +1,29 @@
-$margin: 4rem;
+$margin: 6rem;
 $mobile-margin: 7.5%;
 $max-site-width: 1200px;
 $site-width : 90%;
 
 // Grid Settings
 $columns: 12;
-$gutter: $margin;
-$wide-gutter: $margin;
-$tight-gutter: $margin/2;
+$gutter: 2.5rem;
+$wide-gutter: $gutter * 2;
+$tight-gutter: $gutter / 2;
 $grid-gutter: $gutter;
 
 // General UI Varibales
 $base-border-radius : 0px;
 
 // Colors
-$bg-color : #fff;
-$main-color: #373232;
+$bg-color : #000;
+$main-color: #fff;
 $black : #000;
 $white : #fff;
 $alert : #DF693D;
 $notify : #FFD780;
 $success : #50B87F;
-$text-color : #373232;
-$light-grey : lighten($text-color, 75%);
-$light-text-color : rgba($text-color, .25);
+$text-color : #fff;
+$light-grey : lighten($text-color, 0%);
+$light-text-color : $text-color;
 $hr-color : rgba($white, .3);
 $hr-styles : 1px solid $hr-color;
 
@@ -32,14 +32,14 @@ $link-color : $light-text-color;
 $link-hover-color : $main-color;
 
 // Typography
-$main-font: 'Sailec', sans-serif;
-$secondary-font: $main-font;
-$base-line-height : 1.4em;
-$base-letter-spacing : .0em;
+$main-font: 'Akzidenz', sans-serif;
+$secondary-font: 'Akzidenz Extended', sans-serif;
+$base-line-height : 1.45em;
+$base-letter-spacing : .01em;
 $short-line-height : 1.4em;
 $tracked-out : .2em;
 	// General Text Sizes
-	$base-font-size : 18px;
+	$base-font-size : 16px;
 	$sm-font-size : 12px;
 	$md-font-size : .875rem;
 	// Font Weights
@@ -156,17 +156,3 @@ $fast-speed : .1s;
 $slow-speed : .5s;
 $md-speed : .3s;
 $ease : ease-in-out;
-
-
-$bg-color : #000;
-$text-color : #fff;
-$main-color : #fff;
-$light-text-color : $text-color;
-$link-color : $text-color;
-$link-hover-color : $main-color;
-$main-font : 'PostGrotesk-Light', 'Trade Gothic';
-$margin : 5rem;
-$mobile-margin: $margin/2;
-$gutter : $margin/2;
-$tight-gutter: $mobile-margin;
-$wide-gutter : $margin;

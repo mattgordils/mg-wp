@@ -7,7 +7,7 @@
 }
 
 .wide-space-after {
-	margin-bottom: $wide-gutter;
+	margin-bottom: $margin;
 }
 
 .space-before {
@@ -19,7 +19,7 @@
 }
 
 .wide-space-before {
-	margin-top: $wide-gutter;
+	margin-top: $margin;
 }
 
 .space-right {
@@ -31,7 +31,7 @@
 }
 
 .wide-space-right {
-	margin-right: $wide-gutter;
+	margin-right: $margin;
 }
 
 .space-left {
@@ -43,5 +43,5 @@
 }
 
 .wide-space-left {
-	margin-left: $wide-gutter;
+	margin-left: $margin;
 }

@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 @font-face {
-  font-family: 'Trade Gothic';
-  src:  url('/assets/fonts/trade-gothic/TradeGothicLTStd-BoldExt.woff') format('woff'),
-        url('/assets/fonts/trade-gothic/TradeGothicLTStd-BoldExt.woff2') format('woff2');
+  font-family: 'Akzidenz';
+  src:  url('/assets/fonts/akzidenz/AkzidenzGrotesk-Regular.woff') format('woff'),
+        url('/assets/fonts/akzidenz/AkzidenzGrotesk-Regular.woff2') format('woff2');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akzidenz Extended';
+  src:  url('/assets/fonts/akzidenz/AkzidenzGrotesk-BoldExtended.woff') format('woff'),
+        url('/assets/fonts/akzidenz/AkzidenzGrotesk-BoldExtended.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
 }
 

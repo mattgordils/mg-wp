@@ -5,7 +5,7 @@
 
 {% block content %}
 
-	<section class="project-images">
+	<section class="project-images no-top-space">
 		<div class="container">
 			<div class="inline-grid v-spaced middle">
 				{% for block in post.get_field('project_images') %}
@@ -30,72 +30,59 @@
 					</div>
 
 				{% endfor %}
+			</div>
+		</div>
+	</section>
 
-				<div class="col-12">
-					<div class="float-grid v-spaced">
-						<div class="col-6">
-							<div class="max-width">
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="max-width rich-text large-font-size wide-space-before space-after">
-								{{ post.content }}
-							</div>
-							<div>
-								<p class="light-text-color"><span class="label">Disciplines</span> {{ post.terms | join(', ') }}</p>
-								{% for credit in post.get_field('credits') %}
-									<p class="light-text-color"><span class="label">{{ credit.label }}</span> {{ credit.name }} {{ credit.contributor_link }}</p>
-								{% endfor %}
-								{% if post.get_field('project_link') %}
-									<p>
-										<a href="{{ post.get_field('project_link') }}" target="_blank">{{ post.get_field('project_link') }}</a>
-									</p>
-								{% endif %}
-							</div>
-						</div>
-					</div>
-				</div>
+	<section>
+		<div class="container narrow align-center">
+			<div class="rich-text large-font-size space-after">
+				{{ post.content }}
+			</div>
+			<div>
+				{% if post.get_field('project_link') %}
+					<p class="space-after">
+						<a href="{{ post.get_field('project_link') }}" target="_blank">{{ post.get_field('project_link') }}</a>
+					</p>
+				{% endif %}
 
-				<!-- <div class="col-12">
-					<section class="dark project-info-block">
-						<div class="container max-p-width rich-text">
-							<div>
-								<div class="large-font-size">
-									{{ post.content }}
-								</div>
-							</div>
-						</div>
-					</section>
-				</div> -->
-
+				<p class="light-text-color">
+					{% set services = post.terms %}
+					{% for service in services %}
+						<a href="{{ service.link }}" class="transition-link">{{ service.name }}</a>
+						{% if loop.last == false %},{% endif %}
+					{% endfor %}
+				</p>
+				
+				{% for credit in post.get_field('credits') %}
+					<p class="light-text-color"><span class="label">{{ credit.label }}</span> {{ credit.name }} {{ credit.contributor_link }}</p>
+				{% endfor %}
 			</div>
 		</div>
 	</section>
 
 	<section>
 		<div class="container no-top-space no-bottom-space">
-			<!-- <hr> -->
-			<div class="float-grid v-spaced break-lg">
 				
-				<div class="col-6"><h3 class="large-font-size">More Projects</h3></div>
-				<div class="col-6">
-					<div class="inline-grid more-projects-grid v-spaced no-break tight-gutter">
-						{% for project in projects|slice(0, 4) %}
-							<div class="col">
-								{% include 'components/project-thumb.twig' with { 
-									'item' : project,
-									'layout' : layout,
-									'hide_info' : false
-								} %}
-							</div>
-						{% endfor %}
-						<div class="col-12 align-left">
-							<a href="/portfolio" class="transition-link light-text-color underlined large-font-size">All Work</a>
+				<div class="align-center wide-space-after">
+					<h3 class="header-style">More Projects</h3>
+				</div>
+				
+				<div class="inline-grid more-projects-grid v-spaced no-break">
+					{% for project in projects|slice(0, 4) %}
+						<div class="col">
+							{% include 'components/project-thumb.twig' with { 
+								'item' : project,
+								'layout' : layout,
+								'hide_info' : false
+							} %}
 						</div>
-					</div>
+					{% endfor %}
 				</div>
 
-			</div>
+				<div class="align-center wide-space-before">
+					<a href="/portfolio" class="transition-link header-style underlined">All Work</a>
+				</div>
 		</div>
 	</section>
 

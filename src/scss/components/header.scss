@@ -1,14 +1,19 @@
 header {
-	padding: ($mobile-margin * 1.2) 0 0;
-	@include respond($md) {
-		padding: $margin 0 0;
-	}
+	padding: ($margin * 1.4) 0;
 	.intro {
-		h1, h2 {
-			max-width: 12em;
-		}
-		h2 {
-			// opacity: .4;
-		}
+		display: block;
+		width: 100%;
+	}
+	.home-page & {
+		min-height: 80vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.title {
+		margin-bottom: 0;
+	}
+	.secondary-text {
+		margin-top: .5em;
 	}
 }
