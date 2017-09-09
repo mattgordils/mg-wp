@@ -1,6 +1,0 @@
-<? plugin_dir_path(__FILE__)."assets/sass/"
-$directory = "stylesheets";
-
-include (plugin_dir_path(__FILE__)."assets/includes/scss.inc.php");
-scss_server::serveFrom($directory);
-?>
