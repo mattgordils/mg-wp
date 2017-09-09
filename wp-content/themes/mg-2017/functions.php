@@ -10,7 +10,7 @@ if (!class_exists('Timber'))
 }
 
 
-class HighTide extends TimberSite 
+class MattGordils extends TimberSite 
 {
 
   function __construct()
@@ -32,8 +32,8 @@ class HighTide extends TimberSite
     $context['options'] = get_fields('options');
     $context['request'] = $_REQUEST;
     $context['globals'] = array(
-      'siteTitle' => 'High Tide',
-      'generalEmail' => 'info@hightidenyc.com',
+      'siteTitle' => 'Matt Gordils',
+      'generalEmail' => 'mattgordils@gmail.com',
       'phone' => '718 352 7989',
       'streetAddress' => '231 Front Street, Suite 209',
       'cityStateZip' => 'Brooklyn, New York 11201',
@@ -133,7 +133,7 @@ class HighTide extends TimberSite
 
 }
   
-new HighTide();
+new MattGordils();
 
 function register_menus() 
 {
@@ -247,8 +247,8 @@ if (function_exists('acf_add_options_page'))
 
 function change_menus()
 {
-  remove_menu_page( 'index.php' );                  //Dashboard
-  remove_menu_page( 'edit.php' );                   //Posts
+  // remove_menu_page( 'index.php' );                  //Dashboard
+  // remove_menu_page( 'edit.php' );                   //Posts
   // remove_menu_page( 'upload.php' );              //Media
   remove_menu_page( 'edit.php?post_type=page' ); //Pages
   remove_menu_page( 'edit-comments.php' );          //Comments

@@ -164,6 +164,9 @@ class Ai1wm_Extractor extends Ai1wm_Archiver {
 			throw new Ai1wm_Not_Directory_Exception( sprintf( 'Location is not a directory: %s', $location ) );
 		}
 
+		// Replace forward slash with current directory separator in location
+		$location = $this->replace_forward_slash_with_directory_separator( $location );
+
 		// Flag to hold if file data has been processed
 		$completed = true;
 
@@ -226,15 +229,21 @@ class Ai1wm_Extractor extends Ai1wm_Archiver {
 							}
 						}
 
+						// Escape Windows directory separator in file path
+						$file_path = $this->escape_windows_directory_separator( $location . DIRECTORY_SEPARATOR . $file_path );
+
+						// Escape Windows directory separator in file name
+						$file_name = $this->escape_windows_directory_separator( $location . DIRECTORY_SEPARATOR . $file_name );
+
 						// Check if location doesn't exist, then create it
-						if ( false === is_dir( $location . DIRECTORY_SEPARATOR . $file_path ) ) {
-							@mkdir( $location . DIRECTORY_SEPARATOR . $file_path, $this->get_permissions_for_directory(), true );
+						if ( false === is_dir( $file_path ) ) {
+							@mkdir( $file_path, $this->get_permissions_for_directory(), true );
 						}
 
 						$file_written = 0;
 
 						// We have a match, let's extract the file
-						if ( ( $completed = $this->extract_to( $location . DIRECTORY_SEPARATOR . $file_name, $file_size, $file_mtime, $file_written, $file_offset, $timeout ) ) ) {
+						if ( ( $completed = $this->extract_to( $file_name, $file_size, $file_mtime, $file_written, $file_offset, $timeout ) ) ) {
 							$file_offset = 0;
 						}
 					} else {
@@ -269,6 +278,9 @@ class Ai1wm_Extractor extends Ai1wm_Archiver {
 		if ( false === is_dir( $location ) ) {
 			throw new Ai1wm_Not_Directory_Exception( sprintf( 'Location is not a directory: %s', $location ) );
 		}
+
+		// Replace forward slash with current directory separator in location
+		$location = $this->replace_forward_slash_with_directory_separator( $location );
 
 		// Flag to hold if file data has been processed
 		$completed = true;
@@ -326,15 +338,21 @@ class Ai1wm_Extractor extends Ai1wm_Archiver {
 					// Do we have a match?
 					if ( $should_include_file === true ) {
 
+						// Escape Windows directory separator in file path
+						$file_path = $this->escape_windows_directory_separator( $location . DIRECTORY_SEPARATOR . $file_path );
+
+						// Escape Windows directory separator in file name
+						$file_name = $this->escape_windows_directory_separator( $location . DIRECTORY_SEPARATOR . $file_name );
+
 						// Check if location doesn't exist, then create it
-						if ( false === is_dir( $location . DIRECTORY_SEPARATOR . $file_path ) ) {
-							@mkdir( $location . DIRECTORY_SEPARATOR . $file_path, $this->get_permissions_for_directory(), true );
+						if ( false === is_dir( $file_path ) ) {
+							@mkdir( $file_path, $this->get_permissions_for_directory(), true );
 						}
 
 						$file_written = 0;
 
 						// We have a match, let's extract the file and remove it from the array
-						if ( ( $completed = $this->extract_to( $location . DIRECTORY_SEPARATOR . $file_name, $file_size, $file_mtime, $file_written, $file_offset, $timeout ) ) ) {
+						if ( ( $completed = $this->extract_to( $file_name, $file_size, $file_mtime, $file_written, $file_offset, $timeout ) ) ) {
 							$file_offset = 0;
 						}
 					} else {
@@ -491,13 +509,13 @@ class Ai1wm_Extractor extends Ai1wm_Archiver {
 			$data['filename'] = ( $data['path'] === '.' ? $data['filename'] : $data['path'] . DIRECTORY_SEPARATOR . $data['filename'] );
 
 			// Set file path
-			$data['path'] = ( $data['path'] === '.' ? null : $data['path'] );
+			$data['path'] = ( $data['path'] === '.' ? '' : $data['path'] );
 
-			// Replace forward slash with current directory separator
-			$data['filename'] = str_replace( '/', DIRECTORY_SEPARATOR, $data['filename'] );
+			// Replace forward slash with current directory separator in file name
+			$data['filename'] = $this->replace_forward_slash_with_directory_separator( $data['filename'] );
 
-			// Replace forward slash with current directory separator
-			$data['path'] = str_replace( '/', DIRECTORY_SEPARATOR, $data['path'] );
+			// Replace forward slash with current directory separator in file path
+			$data['path'] = $this->replace_forward_slash_with_directory_separator( $data['path'] );
 		}
 
 		return $data;

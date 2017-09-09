@@ -110,6 +110,14 @@ require_once AI1WM_VENDOR_PATH .
 			DIRECTORY_SEPARATOR .
 			'servmask' .
 			DIRECTORY_SEPARATOR .
+			'filter' .
+			DIRECTORY_SEPARATOR .
+			'class-ai1wm-recursive-newline-filter.php';
+
+require_once AI1WM_VENDOR_PATH .
+			DIRECTORY_SEPARATOR .
+			'servmask' .
+			DIRECTORY_SEPARATOR .
 			'archiver' .
 			DIRECTORY_SEPARATOR .
 			'class-ai1wm-archiver.php';
@@ -235,6 +243,10 @@ require_once AI1WM_EXPORT_PATH .
 require_once AI1WM_EXPORT_PATH .
 			DIRECTORY_SEPARATOR .
 			'class-ai1wm-export-database.php';
+
+require_once AI1WM_EXPORT_PATH .
+			DIRECTORY_SEPARATOR .
+			'class-ai1wm-export-database-file.php';
 
 require_once AI1WM_EXPORT_PATH .
 			DIRECTORY_SEPARATOR .
