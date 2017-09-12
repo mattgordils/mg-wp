@@ -9,68 +9,40 @@
 
 <channel>
 	<title>Packaging &#8211; Matthew Gordils</title>
-	<atom:link href="https://mattgordils.github.io/mg-wp/services/packaging/feed/" rel="self" type="application/rss+xml" />
-	<link>https://mattgordils.github.io/mg-wp/</link>
+	<atom:link href="/mg-wp/services/packaging/feed/" rel="self" type="application/rss+xml" />
+	<link>/mg-wp/</link>
 	<description>Designer, Illustrator, and front end developer</description>
-	<lastBuildDate>Thu, 31 Aug 2017 00:54:01 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 12 Sep 2017 01:12:01 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.8.1</generator>
 	<item>
 		<title>Totally Organic</title>
-		<link>https://mattgordils.github.io/mg-wp/portfolio/totally-organic/</link>
+		<link>/mg-wp/portfolio/totally-organic/</link>
 		<pubDate>Sun, 20 Apr 2014 20:32:06 +0000</pubDate>
 		<dc:creator><![CDATA[artomatt]]></dc:creator>
 		
 		<guid isPermaLink="false">http://localhost:8888/artomatt-2014-3/?post_type=projects&#038;p=336</guid>
 		<description><![CDATA[<p>Totally Organic is a orange juice packaging created for Trader Joes. The juice comes in a carton or a frozen concentrate. For the look of the packaging I played off of botanical drawings and retro fruit patterns.</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/totally-organic/">Totally Organic</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
+<p>The post <a rel="nofollow" href="/mg-wp/portfolio/totally-organic/">Totally Organic</a> appeared first on <a rel="nofollow" href="/mg-wp/">Matthew Gordils</a>.</p>
 ]]></description>
 				<content:encoded><![CDATA[<p>Totally Organic is a orange juice packaging created for Trader Joes. The juice comes in a carton or a frozen concentrate. For the look of the packaging I played off of botanical drawings and retro fruit patterns.</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/totally-organic/">Totally Organic</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
-]]></content:encoded>
-			</item>
-		<item>
-		<title>State Fair</title>
-		<link>https://mattgordils.github.io/mg-wp/portfolio/state-fair/</link>
-		<pubDate>Sun, 20 Apr 2014 20:29:37 +0000</pubDate>
-		<dc:creator><![CDATA[artomatt]]></dc:creator>
-		
-		<guid isPermaLink="false">http://localhost:8888/artomatt-2014-3/?post_type=projects&#038;p=330</guid>
-		<description><![CDATA[<p>Packaging for a series of preserves that would be sold at a State Fair. Each of the three would be sold at a different state’s fair. Florida sells its state’s juicy orange preserves, Washington has its crisp apple preserves, and Georgia sells its states delicious peach preserves. The style for these labels play off of old [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/state-fair/">State Fair</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
-]]></description>
-				<content:encoded><![CDATA[<p>Packaging for a series of preserves that would be sold at a State Fair. Each of the three would be sold at a different state’s fair. Florida sells its state’s juicy orange preserves, Washington has its crisp apple preserves, and Georgia sells its states delicious peach preserves. The style for these labels play off of old fruit crate labels. The containers are the real jars used to preserve the fruits.</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/state-fair/">State Fair</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
+<p>The post <a rel="nofollow" href="/mg-wp/portfolio/totally-organic/">Totally Organic</a> appeared first on <a rel="nofollow" href="/mg-wp/">Matthew Gordils</a>.</p>
 ]]></content:encoded>
 			</item>
 		<item>
 		<title>Reel Food</title>
-		<link>https://mattgordils.github.io/mg-wp/portfolio/reel-food/</link>
+		<link>/mg-wp/portfolio/reel-food/</link>
 		<pubDate>Sun, 20 Apr 2014 19:57:14 +0000</pubDate>
 		<dc:creator><![CDATA[artomatt]]></dc:creator>
 		
 		<guid isPermaLink="false">http://localhost:8888/artomatt-2014-3/?post_type=projects&#038;p=283</guid>
 		<description><![CDATA[<p>Reel Food is a fictional restaurant identity showcasing classic films during a dinner-theater dining experience. The project includes a menu and a take-home bag. Tickets were created for the restaurant and popcorn boxes were designed to offer a cinematic experience. There is a box collection of classic food movies along with recipe cards in each [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/reel-food/">Reel Food</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
+<p>The post <a rel="nofollow" href="/mg-wp/portfolio/reel-food/">Reel Food</a> appeared first on <a rel="nofollow" href="/mg-wp/">Matthew Gordils</a>.</p>
 ]]></description>
 				<content:encoded><![CDATA[<p>Reel Food is a fictional restaurant identity showcasing classic films during a dinner-theater dining experience. The project includes a menu and a take-home bag. Tickets were created for the restaurant and popcorn boxes were designed to offer a cinematic experience. There is a box collection of classic food movies along with recipe cards in each movie case. With the project is a flip book of everyones favorite Italian, romantic, K9 couple.</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/reel-food/">Reel Food</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
-]]></content:encoded>
-			</item>
-		<item>
-		<title>Hornswaggle</title>
-		<link>https://mattgordils.github.io/mg-wp/portfolio/hornswaggle/</link>
-		<pubDate>Sun, 20 Apr 2014 19:49:36 +0000</pubDate>
-		<dc:creator><![CDATA[artomatt]]></dc:creator>
-		
-		<guid isPermaLink="false">http://localhost:8888/artomatt-2014-3/?post_type=projects&#038;p=270</guid>
-		<description><![CDATA[<p>A packaging for a pirate inspired, dark spiced rum. It is a modern take on a rum for classy pirates.</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/hornswaggle/">Hornswaggle</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
-]]></description>
-				<content:encoded><![CDATA[<p>A packaging for a pirate inspired, dark spiced rum. It is a modern take on a rum for classy pirates.</p>
-<p>The post <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/portfolio/hornswaggle/">Hornswaggle</a> appeared first on <a rel="nofollow" href="https://mattgordils.github.io/mg-wp/">Matthew Gordils</a>.</p>
+<p>The post <a rel="nofollow" href="/mg-wp/portfolio/reel-food/">Reel Food</a> appeared first on <a rel="nofollow" href="/mg-wp/">Matthew Gordils</a>.</p>
 ]]></content:encoded>
 			</item>
 	</channel>
@@ -80,4 +52,4 @@
 
 Page Caching using disk: enhanced
 
- Served from: dev.mgwp.com @ 2017-09-10 00:49:21 by W3 Total Cache -->
+ Served from: dev.mgwp.com @ 2017-09-12 01:16:56 by W3 Total Cache -->
