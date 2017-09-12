@@ -1,11 +1,10 @@
 {% extends "base.twig" %}
-{% set body_class = 'home-page' %}
 
 {% block content %}
 
 	<section class="no-top-space">
 		<div class="container">
-			<div class="inline-grid project-grid no-break v-spaced center">
+			<div class="inline-grid project-grid no-break v-{% if hide_thumb_info != true %}wide-{%endif %}spaced center">
 				{% for project in projects %}
 
 					{% if project.size == 'third' %}
@@ -23,7 +22,7 @@
 						{% include 'components/project-thumb.twig' with { 
 							'item' : project,
 							'layout' : layout,
-							'hide_info' : true
+							'hide_info' : hide_thumb_info
 						} %}
 					</div>
 

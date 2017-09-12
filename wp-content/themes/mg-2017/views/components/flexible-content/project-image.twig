@@ -1,5 +1,5 @@
 {% set project_image =  TimberImage(block.project_image) %}
-<div class="{% if gutter != 'normal' %}{#{ gutter }#} {% endif %}{{ style }}" {% if style != 'none' %}style="background-color: {{ background_color }}{% endif %}">
+<div class="{% if gutter != 'normal' %}{{ gutter }} {% endif %}{{ style }}" {% if (style != 'none') and (block.alternate_matt == true) %}style="background-color: {{ background_color }}{% endif %}">
 	{% if media == 'video' %}
 		<video autoplay loop muted playsinline>
       <source src="{{TimberImage(block.video).src}}" type="video/mp4">
@@ -15,10 +15,16 @@
 					{{ project_image.src | resize(1000) }} 1000w,
 					{{ project_image.src | resize(1200) }} 1200w,
 					{{ project_image.src | resize(1500) }} 1500w"
-				sizes="(max-width: 400px) 400px,
-            (max-width: 800px) 800px,
-            (max-width: 1200px) 1200px,
-            (min-width: 1300px) 1500px"
+				sizes="
+					{% if (style == 'browser') or (style == 'mobile') or (style == 'poster') %}
+						(min-width: 600) 700px, 90vw
+					{% elseif width == 'half' %}
+						(min-width: 600) 45vw, 90vw
+					{% elseif width == 'third' %}
+						(min-width: 600) 30vw, 90vw
+					{% else %}
+						90vw
+					{% endif %}"
 				src="{{ project_image.src | resize(1200) }}"
 				alt="{{ block.project_image | alt}}">
 		{% endif %}

@@ -69,6 +69,8 @@ $project-padding : 15%;
 			width: 700px;
 			border-radius: 3px;
 		}
+	}
+	.browser {
 		@include respond-smaller-than($md) {
 			padding: 0;
 			background: transparent !important;

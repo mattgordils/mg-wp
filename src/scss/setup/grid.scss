@@ -2,8 +2,12 @@ $col: 100% / 12;
 
 @mixin grid-setup() {
 	display: block;
-	margin-left: calc(#{$gutter} * -.5);
-	margin-right: calc(#{$gutter} * -.5);
+	margin-left: calc(#{$mobile-margin} * -.5);
+	margin-right: calc(#{$mobile-margin} * -.5);
+	@include respond($md) {
+		margin-left: calc(#{$gutter} * -.5);
+		margin-right: calc(#{$gutter} * -.5);
+	}
 }
 
 @mixin wide-gutter-grid-setup() {
@@ -30,11 +34,15 @@ $col: 100% / 12;
 	> .col {
 		font-size: inherit;
 		flex-grow: 0;
-		padding-left: calc(#{$gutter} / 2);
-		padding-right: calc(#{$gutter} / 2);
+		padding-left: calc(#{$mobile-margin} / 2);
+		padding-right: calc(#{$mobile-margin} / 2);
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
+		@include respond($md) {
+			padding-left: calc(#{$gutter} / 2);
+			padding-right: calc(#{$gutter} / 2);
+		}
 	}
 
 	.col-12 {

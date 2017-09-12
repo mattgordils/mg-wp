@@ -7,7 +7,7 @@
 	$context['services'] = new TimberTerm('custom_cats');
 	$query = array(
 		'post_type' => 'projects',
-		'posts_per_page' => -1,
+		'posts_per_page' => 4,
 		'orderby' => 'rand',
 		'order' => 'asc',
 		'post__not_in' => array($post_id)

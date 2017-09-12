@@ -148,42 +148,42 @@ add_action( 'init', 'register_menus' );
 
 // Create Post Types
 
-function create_projects() {
-  $labels = array(
-    'name'               => __( 'Projects'),
-    'singular_name'      => __( 'Project'),
-    'menu_name'          => __( 'Work'),
-    'name_admin_bar'     => __( 'Project'),
-    'add_new'            => __( 'Add New'),
-    'add_new_item'       => __( 'Add New Project'),
-    'new_item'           => __( 'New Project'),
-    'edit_item'          => __( 'Edit Project'),
-    'view_item'          => __( 'View Project'),
-    'all_items'          => __( 'All Projects'),
-    'search_items'       => __( 'Search Projects'),
-    'parent_item_colon'  => __( 'Parent Project:'),
-    'not_found'          => __( 'No Projects found.'),
-    'not_found_in_trash' => __( 'No Projects found in Trash.')
-  );
+// function create_projects() {
+//   $labels = array(
+//     'name'               => __( 'Projects'),
+//     'singular_name'      => __( 'Project'),
+//     'menu_name'          => __( 'Work'),
+//     'name_admin_bar'     => __( 'Project'),
+//     'add_new'            => __( 'Add New'),
+//     'add_new_item'       => __( 'Add New Project'),
+//     'new_item'           => __( 'New Project'),
+//     'edit_item'          => __( 'Edit Project'),
+//     'view_item'          => __( 'View Project'),
+//     'all_items'          => __( 'All Projects'),
+//     'search_items'       => __( 'Search Projects'),
+//     'parent_item_colon'  => __( 'Parent Project:'),
+//     'not_found'          => __( 'No Projects found.'),
+//     'not_found_in_trash' => __( 'No Projects found in Trash.')
+//   );
 
-  $args = array(
-    'labels'             => $labels,
-    'public'             => true,
-    'publicly_queryable' => true,
-    'show_ui'            => true,
-    'query_var'          => true,
-    'menu_icon'          => 'dashicons-format-gallery',
-    'menu_position'      => 2,
-    'rewrite'            => array( 'slug' => 'projects'),
-    'capability_type'    => 'post',
-    'has_archive'        => true,
-    'hierarchical'       => true,
-    'taxonomies' => array('post_tag'),
-    'supports'           => array('title','thumbnail','editor', 'page-attributes')
-  );
-  register_post_type( 'project', $args );
-}
-add_action( 'init', 'create_projects' );
+//   $args = array(
+//     'labels'             => $labels,
+//     'public'             => true,
+//     'publicly_queryable' => true,
+//     'show_ui'            => true,
+//     'query_var'          => true,
+//     'menu_icon'          => 'dashicons-format-gallery',
+//     'menu_position'      => 2,
+//     'rewrite'            => array( 'slug' => 'projects'),
+//     'capability_type'    => 'post',
+//     'has_archive'        => true,
+//     'hierarchical'       => true,
+//     'taxonomies' => array('post_tag'),
+//     'supports'           => array('title','thumbnail','editor', 'page-attributes')
+//   );
+//   register_post_type( 'project', $args );
+// }
+// add_action( 'init', 'create_projects' );
 
 // function create_press() {
 //   $labels = array(

@@ -2,11 +2,11 @@
 	<section class="no-top-space">
 		<div class="container align-center">
       <div>{{ get_field('town_state', 'options') }}</div>
-      <a href="mailto:{{ get_field('email', 'options') }}">{{ get_field('email', 'options') }}</a>
+      <a class="underline-hover" href="mailto:{{ get_field('email', 'options') }}">{{ get_field('email', 'options') }}</a>
       <div class="space-before">
 	      {% for link in get_field('social_media', 'options') %}
 	      	<div>
-	          <a href="{{link.link}}" target="_blank" title="Matt Gordils on {{link.name}}">{{link.name}}</a>
+	          <a class="underline-hover" href="{{link.link}}" target="_blank" title="Matt Gordils on {{link.name}}">{{link.name}}</a>
 	        </div>
 	      {% endfor %}
       </div>

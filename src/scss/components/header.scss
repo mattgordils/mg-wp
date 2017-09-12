@@ -16,4 +16,9 @@ header {
 	.secondary-text {
 		margin-top: .5em;
 	}
+	.container {
+		&.narrow {
+			max-width: 21rem;
+		}
+	}
 }

@@ -238,6 +238,18 @@ hr {
   color: $bg-color;
 }
 
+a {
+	&.underline-hover {
+		color: $text-color;
+		border-bottom: 1px solid transparent;
+		padding-bottom: .1em;
+		&:hover {
+			color: $text-color;
+			border-color: currentcolor;
+		}
+	}
+}
+
 .underlined-link {
 	@include small-caps();
 	border-bottom: 1px solid currentcolor;

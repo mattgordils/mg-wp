@@ -49,8 +49,7 @@
 				<p class="light-text-color">
 					{% set services = post.terms %}
 					{% for service in services %}
-						<a href="{{ service.link }}" class="transition-link">{{ service.name }}</a>
-						{% if loop.last == false %},{% endif %}
+						<a href="{{ service.link }}" class="transition-link">{{ service.name }}</a>{% if loop.last == false %},{% endif %}
 					{% endfor %}
 				</p>
 				
@@ -69,7 +68,8 @@
 				</div>
 				
 				<div class="inline-grid more-projects-grid v-spaced no-break">
-					{% for project in projects|slice(0, 4) %}
+					{#% for project in projects|slice(0, 4) %#}
+					{% for project in projects %}
 						<div class="col">
 							{% include 'components/project-thumb.twig' with { 
 								'item' : project,
