@@ -12,7 +12,7 @@
 	<atom:link href="/mg-wp/portfolio/feed/" rel="self" type="application/rss+xml" />
 	<link>/mg-wp/</link>
 	<description>Designer, Illustrator, and front end developer</description>
-	<lastBuildDate>Tue, 12 Sep 2017 01:12:01 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 13 Sep 2017 01:12:02 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -151,9 +151,3 @@
 			</item>
 	</channel>
 </rss>
-
-<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
-
-Page Caching using disk: enhanced
-
- Served from: dev.mgwp.com @ 2017-09-12 01:17:02 by W3 Total Cache -->
