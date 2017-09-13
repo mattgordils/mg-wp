@@ -3,7 +3,8 @@
 var $ = require('jquery');
 window.jQuery = window.$ = require("jquery");
 var animsition = require('animsition');
-var lazyload = require('jquery-lazyload/jquery.lazyload.js');
+// var lazyload = require('jquery-lazyload/jquery.lazyload.js');
+var lazysizes = require('lazysizes');
 
 var global = {
   init: function(){
@@ -11,6 +12,7 @@ var global = {
 
   ready: function(){
     this.pageTransitions();
+    lazySizes.init();
     // this.lazyloadImages();
     // this.transitionBackgrounds();
   },
@@ -22,12 +24,12 @@ var global = {
     // this.transitionBackgrounds();
   },
 
-  lazyloadImages: function () {
-    console.log('lazy')
-    $("img.lazy").lazyload({
-      effect : "fadeIn"
-    });
-  },
+  // lazyloadImages: function () {
+  //   console.log('lazy')
+  //   $("img.lazy").lazyload({
+  //     effect : "fadeIn"
+  //   });
+  // },
 
   pageTransitions: function () {
     $(".animsition").animsition({

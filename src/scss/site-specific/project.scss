@@ -12,6 +12,10 @@ $project-padding : 15%;
 	.container {
 		// max-width: 1000px;
 	}
+	.wide-browser-wrap {
+		max-width: 700px;
+		margin: 0 auto;
+	}
 	.browser,
 	.poster,
 	.mobile {
@@ -19,11 +23,16 @@ $project-padding : 15%;
 		background: #f2f2f2;
 		background: #efefef;
 		background: lighten(black, 11%);
+		text-align: center;
+		.lazy-wrap {
+			background: transparent;
+		}
 		@include respond($md) {
 			padding: $project-padding;
 		}
 		img,
-		video {
+		video,
+		.lazy-wrap {
 			margin: 0 auto;
 			// box-shadow: 0 1rem 2rem rgba(0, 0, 0, .07);
 			// box-shadow: 0 0 60px -10px rgba(0, 0, 0, .2);
@@ -65,7 +74,8 @@ $project-padding : 15%;
 	.browser,
 	.mobile {
 		img,
-		video {
+		video,
+		.lazy-wrap {
 			width: 700px;
 			border-radius: 3px;
 		}
@@ -79,12 +89,14 @@ $project-padding : 15%;
 	.mobile {
 		padding: $project-padding;
 		img,
-		video {
+		video,
+		.lazy-wrap {
 			width: 300px;
 		}
 	}
 	.poster {
-		img {
+		img,
+		.lazy-wrap {
 			width: 700px;
 		}
 	}

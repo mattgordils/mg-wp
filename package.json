@@ -36,6 +36,7 @@
     "animsition": "^4.0.2",
     "compression-webpack-plugin": "^1.0.0",
     "jquery-lazyload": "^1.9.7",
+    "lazysizes": "^4.0.0-rc3",
     "object-fit-polyfill": "^0.1.0"
   }
 }

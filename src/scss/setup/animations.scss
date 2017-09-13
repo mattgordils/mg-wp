@@ -27,3 +27,26 @@ header,
 		animation-delay: .3s;
 	}
 }
+
+.lazy-wrap {
+	background: lighten(black, 11%);
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 0;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		opacity: 0;
+		transition: opacity $md-speed $ease;
+		&.lazyloaded {
+			opacity: 1;
+		}
+	}
+}

@@ -5,29 +5,41 @@
       <source src="{{TimberImage(block.video).src}}" type="video/mp4">
     </video>
 	{% else %}
-		{% if '.gif' in project_image.src %}
-			<img
-				src="{{ project_image.src }}"
-				alt="{{ block.project_image | alt}}">
-		{% else %}
-				<img
-				srcset="{{ project_image.src | resize(600) }} 600w,
-					{{ project_image.src | resize(1000) }} 1000w,
-					{{ project_image.src | resize(1200) }} 1200w,
-					{{ project_image.src | resize(1500) }} 1500w"
-				sizes="
-					{% if (style == 'browser') or (style == 'mobile') or (style == 'poster') %}
-						(min-width: 600) 700px, 90vw
-					{% elseif width == 'half' %}
-						(min-width: 600) 45vw, 90vw
-					{% elseif width == 'third' %}
-						(min-width: 600) 30vw, 90vw
-					{% else %}
-						90vw
-					{% endif %}"
-				src="{{ project_image.src | resize(1200) }}"
-				alt="{{ block.project_image | alt}}">
+		
+		{% if (style == 'browser') or (style == 'poster') and (width == 'full-width') %}
+		<div class="wide-browser-wrap">
 		{% endif %}
+
+		<div 
+			class="lazy-wrap"
+			style="padding-bottom: {{ project_image.height / project_image.width * 100 ~ '%' }}"
+			>
+			
+					<img
+						class="lazyload"
+						data-srcset="{{ project_image.src | resize(700) }} 700w,
+							{{ project_image.src | resize(1001) }} 1001w,
+							{{ project_image.src | resize(1201) }} 1201w,
+							{{ project_image.src | resize(1501) }} 1501w"
+						sizes="
+							{% if (style == 'browser') or (style == 'mobile') or (style == 'poster') %}
+								(min-width: 600) 700px, 90vw
+							{% elseif width == 'half' %}
+								(min-width: 600) 45vw, 90vw
+							{% elseif width == 'third' %}
+								(min-width: 600) 30vw, 90vw
+							{% else %}
+								90vw
+							{% endif %}"
+						data-src="{{ project_image.src | resize(1201) }}"
+						alt="{{ block.project_image | alt}}">
+			
+		</div>
+
+		{% if (style == 'browser') or (style == 'poster') and (width == 'full-width') %}
+		</div>
+		{% endif %}
+		
 		{% if project_image.post_excerpt %}
 			<p class="caption">{{ project_image.post_excerpt }}</p>
 		{% endif %}
