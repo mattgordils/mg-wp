@@ -9,26 +9,26 @@
 
 <channel>
 	<title>Lettering &#8211; Matthew Gordils</title>
-	<atom:link href="/mg-wp/services/lettering/feed/" rel="self" type="application/rss+xml" />
-	<link>/mg-wp/</link>
+	<atom:link href="/services/lettering/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>Designer, Illustrator, and front end developer</description>
-	<lastBuildDate>Wed, 13 Sep 2017 01:12:02 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 13 Sep 2017 12:48:17 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.8.1</generator>
 	<item>
 		<title>Southpaw Circus</title>
-		<link>/mg-wp/portfolio/southpaw-circus/</link>
+		<link>/portfolio/southpaw-circus/</link>
 		<pubDate>Sun, 20 Apr 2014 20:26:39 +0000</pubDate>
 		<dc:creator><![CDATA[artomatt]]></dc:creator>
 		
 		<guid isPermaLink="false">http://localhost:8888/artomatt-2014-3/?post_type=projects&#038;p=318</guid>
 		<description><![CDATA[<p>The Southpaw Circus is a fictional event featuring animal boxing between some of the most ferocious contenders. The champion is crowned with the title the King of the Jungle. The project included a logo mark, poster series and collection of trading cards featuring the fierce competitors. The cards also included fighter information and the history [&#8230;]</p>
-<p>The post <a rel="nofollow" href="/mg-wp/portfolio/southpaw-circus/">Southpaw Circus</a> appeared first on <a rel="nofollow" href="/mg-wp/">Matthew Gordils</a>.</p>
+<p>The post <a rel="nofollow" href="/portfolio/southpaw-circus/">Southpaw Circus</a> appeared first on <a rel="nofollow" href="/">Matthew Gordils</a>.</p>
 ]]></description>
 				<content:encoded><![CDATA[<p>The Southpaw Circus is a fictional event featuring animal boxing between some of the most ferocious contenders. The champion is crowned with the title the King of the Jungle. The project included a logo mark, poster series and collection of trading cards featuring the fierce competitors. The cards also included fighter information and the history of the event. The Southpaw Circus posters and trading cards showcase a hand drawn script inspired by from 1920’s boxing posters.</p>
-<p>The post <a rel="nofollow" href="/mg-wp/portfolio/southpaw-circus/">Southpaw Circus</a> appeared first on <a rel="nofollow" href="/mg-wp/">Matthew Gordils</a>.</p>
+<p>The post <a rel="nofollow" href="/portfolio/southpaw-circus/">Southpaw Circus</a> appeared first on <a rel="nofollow" href="/">Matthew Gordils</a>.</p>
 ]]></content:encoded>
 			</item>
 	</channel>
